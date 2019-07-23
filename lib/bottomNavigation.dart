@@ -35,7 +35,7 @@ class _BottomNavigationState extends State<BottomNavigation>{
         items: [
           BottomNavigationBarItem(
             icon: new Icon(Icons.video_label),
-            title: new Text('Arrow'),
+            title: new Text('Recipes'),
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.camera),
@@ -43,7 +43,7 @@ class _BottomNavigationState extends State<BottomNavigation>{
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.insert_chart),
-              title: Text('Sales')
+              title: Text('Youtube')
           )
         ],
       ),

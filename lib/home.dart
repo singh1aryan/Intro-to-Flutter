@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Baby Names',
+      title: 'Recipes',
       home: MyHomePage(),
     );
   }
@@ -97,4 +97,26 @@ class Record {
 
   @override
   String toString() => "Record<$name:$votes>";
+}
+
+class Recipe{
+  final String title;
+  final String description;
+  final int likes;
+  final DocumentReference reference;
+
+  Recipe.fromMap(Map<String, dynamic> map, {this.reference})
+      : assert(map['title'] != null),
+        assert(map['description'] != null),
+        assert(map['likes'] != null),
+        title = map['title'],
+        description = map['description'],
+        likes = map['likes'];
+
+  Recipe.fromSnapshot(DocumentSnapshot snapshot)
+      : this.fromMap(snapshot.data, reference: snapshot.reference);
+
+  @override
+  String toString() => "Record<$title:$likes>";
+
 }
