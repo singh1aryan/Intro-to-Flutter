@@ -39,7 +39,7 @@ class _BottomNavigationState extends State<BottomNavigation>{
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.camera),
-            title: new Text('News'),
+            title: new Text('Add'),
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.insert_chart),
