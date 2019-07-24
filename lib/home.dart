@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildBody(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: Firestore.instance.collection('baby').snapshots(),
+      stream: Firestore.instance.collection('recipes').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return LinearProgressIndicator();
 
@@ -55,27 +55,84 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
-    final record = Record.fromSnapshot(data);
+    final record = Recipe.fromSnapshot(data);
 
     return Padding(
-      key: ValueKey(record.name),
+      key: ValueKey(record.title),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey),
           borderRadius: BorderRadius.circular(5.0),
         ),
-        child: ListTile(
-          title: Text(record.name),
-          trailing: Text(record.votes.toString()),
-          onTap: () => Firestore.instance.runTransaction((transaction) async {
-            final freshSnapshot = await transaction.get(record.reference);
-            final fresh = Record.fromSnapshot(freshSnapshot);
-
-            await transaction
-                .update(record.reference, {'votes': fresh.votes + 1});
-          }),
-        ),
+        child:Container(
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 5.0, 0, 0),
+                child: Text(
+                  record.title,
+                  style: TextStyle(
+                    color: Colors.blue[900],
+                    fontSize: 20
+                  ),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                child: Card(
+                  child: Image.network(record.image),
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Expanded(
+                    child: Center(
+                      child: Text(record.likes.toString()),
+                    ),
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Text(record.likes.toString()),
+                    ),
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Text(record.likes.toString()),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Expanded(
+                    child: Center(
+                      child: Icon(Icons.favorite_border),
+                    ),
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Icon(Icons.rate_review),
+                    ),
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Icon(Icons.view_carousel),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        )
       ),
     );
   }
@@ -103,15 +160,18 @@ class Recipe{
   final String title;
   final String description;
   final int likes;
+  final String image;
   final DocumentReference reference;
 
   Recipe.fromMap(Map<String, dynamic> map, {this.reference})
       : assert(map['title'] != null),
         assert(map['description'] != null),
         assert(map['likes'] != null),
+        assert(map['image'] != null),
         title = map['title'],
         description = map['description'],
-        likes = map['likes'];
+        likes = map['likes'],
+        image = map['image'];
 
   Recipe.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
@@ -120,3 +180,19 @@ class Recipe{
   String toString() => "Record<$title:$likes>";
 
 }
+
+//ListTile(
+//title: Text(record.title),
+//subtitle: Container(
+//height: 100,
+//child: Image.network(record.image),
+//),
+//trailing: Text(record.likes.toString()),
+//onTap: () => Firestore.instance.runTransaction((transaction) async {
+//final freshSnapshot = await transaction.get(record.reference);
+//final fresh = Record.fromSnapshot(freshSnapshot);
+//
+//await transaction
+//    .update(record.reference, {'votes': fresh.votes + 1});
+//}),
+//),
