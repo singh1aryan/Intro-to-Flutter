@@ -100,12 +100,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Expanded(
                     child: Center(
-                      child: Text(record.likes.toString()),
+                      child: Text(record.views.toString()),
                     ),
                   ),
                   Expanded(
                     child: Center(
-                      child: Text(record.likes.toString()),
+                      child: Text(record.comments.length.toString()),
                     ),
                   ),
                 ],
@@ -159,19 +159,26 @@ class Record {
 class Recipe{
   final String title;
   final String description;
-  final int likes;
   final String image;
+
+  final int likes;
+  final int views;
+  final List<String> comments;
   final DocumentReference reference;
 
   Recipe.fromMap(Map<String, dynamic> map, {this.reference})
       : assert(map['title'] != null),
         assert(map['description'] != null),
-        assert(map['likes'] != null),
         assert(map['image'] != null),
+        assert(map['likes'] != null),
+        assert(map['views'] != null),
+        assert(map['comments'] != null),
         title = map['title'],
         description = map['description'],
+        image = map['image'],
         likes = map['likes'],
-        image = map['image'];
+        views = map['views'],
+        comments = map['comments'].cast<String>();
 
   Recipe.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
