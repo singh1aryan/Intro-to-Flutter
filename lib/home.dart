@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'model/recipe.dart';
-import 'asymmetric_view.dart';
+import 'package:easy_recipe/UI/asymmetric_view.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -48,98 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     return AsymmetricView(products: recipe_list,);
   }
-
-  List<Recipe> recipeList(BuildContext context, DocumentSnapshot data){
-
-  }
-
-//    return ListView(
-//      padding: const EdgeInsets.only(top: 20.0),
-//      children: snapshot.map((data) => _buildListItem(context, data)).toList(),
-//    );
-
-  Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
-    final record = Recipe.fromSnapshot(data);
-
-    return Padding(
-      key: ValueKey(record.title),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
-          borderRadius: BorderRadius.circular(5.0),
-        ),
-        child:Container(
-          width: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 5.0, 0, 0),
-                child: Text(
-                  record.title,
-                  style: TextStyle(
-                    color: Colors.blue[900],
-                    fontSize: 20
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                child: Card(
-                  child: Image.network(record.image),
-                ),
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Expanded(
-                    child: Center(
-                      child: Text(record.likes.toString()),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Text(record.views.toString()),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Text(record.comments.length.toString()),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Expanded(
-                    child: Center(
-                      child: Icon(Icons.favorite_border),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Icon(Icons.rate_review),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Icon(Icons.view_carousel),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        )
-      ),
-    );
-  }
 }
 
 class Record {
@@ -159,19 +67,3 @@ class Record {
   @override
   String toString() => "Record<$name:$votes>";
 }
-
-//ListTile(
-//title: Text(record.title),
-//subtitle: Container(
-//height: 100,
-//child: Image.network(record.image),
-//),
-//trailing: Text(record.likes.toString()),
-//onTap: () => Firestore.instance.runTransaction((transaction) async {
-//final freshSnapshot = await transaction.get(record.reference);
-//final fresh = Record.fromSnapshot(freshSnapshot);
-//
-//await transaction
-//    .update(record.reference, {'votes': fresh.votes + 1});
-//}),
-//),

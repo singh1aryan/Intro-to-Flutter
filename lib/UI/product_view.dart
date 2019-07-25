@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'asymmetric_view.dart';
+import 'package:easy_recipe/UI/asymmetric_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'model/recipe.dart';
+import 'package:easy_recipe/model/recipe.dart';
 
 class HomePage extends StatelessWidget {
 

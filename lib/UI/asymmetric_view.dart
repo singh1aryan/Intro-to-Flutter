@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'model/recipe.dart';
-import 'product_column.dart';
+import 'package:easy_recipe/model/recipe.dart';
+import 'package:easy_recipe/UI/product_column.dart';
 
 class AsymmetricView extends StatelessWidget {
   final List<Recipe> products;

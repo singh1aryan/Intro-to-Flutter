@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'model/recipe.dart';
+import 'package:easy_recipe/model/recipe.dart';
 import 'product_card.dart';
 
 class TwoProductCardColumn extends StatelessWidget {
