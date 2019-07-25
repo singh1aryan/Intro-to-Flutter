@@ -31,6 +31,20 @@ Coming soon
 </div>
 
 
+### Intgerating Asymmetric view with Firestore
+* Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
+* It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
+* How I did it? I would suggest you to try it, it'll take probably 10 minutes, but you'll love it
+*   ```
+    List<Recipe> recipe_list = [];
+    //    snapshot.map((data) => recipeList(context, data).toList());
+    for(int i=0;i<snapshot.length;i++){
+      Recipe recipe = Recipe.fromSnapshot(snapshot[i]);
+      recipe_list.add(recipe);
+    }
+    return AsymmetricView(products: recipe_list,);
+    ```
+
 ### Todo
 1. ~~Load recipes~~
 2. youtube API

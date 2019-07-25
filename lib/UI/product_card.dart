@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        GestureDetector(
+        InkWell(
           onTap: (){
             final snackBar = SnackBar(content: Text("Tap"));
             Scaffold.of(context).showSnackBar(snackBar);
@@ -41,7 +41,7 @@ class ProductCard extends StatelessWidget {
             child: imageWidget,
           ),
         ),
-        GestureDetector(
+        InkWell(
           onTap: (){
             final snackBar = SnackBar(content: Text("Tap"));
             Scaffold.of(context).showSnackBar(snackBar);
