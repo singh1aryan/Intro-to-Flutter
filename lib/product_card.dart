@@ -17,7 +17,12 @@ class ProductCard extends StatelessWidget {
         decimalDigits: 0, locale: Localizations.localeOf(context).toString());
     final ThemeData theme = Theme.of(context);
 
-    final imageWidget = Image.asset(
+//    final imageWidget = Image.asset(
+//      recipe.image,
+//      fit: BoxFit.cover,
+//    );
+
+    final imageWidget = Image.network(
       recipe.image,
       fit: BoxFit.cover,
     );

@@ -29,7 +29,12 @@ class Recipe{
   Recipe.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
 
+
+//  String get assetName => image;
+
   @override
   String toString() => "Record<$title:$likes>";
+
+
 
 }
