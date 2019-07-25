@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'model/recipe.dart';
+import 'asymmetric_view.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -32,18 +34,29 @@ class _MyHomePageState extends State<MyHomePage> {
       stream: Firestore.instance.collection('recipes').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return LinearProgressIndicator();
-
         return _buildList(context, snapshot.data.documents);
       },
     );
   }
 
   Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
-    return ListView(
-      padding: const EdgeInsets.only(top: 20.0),
-      children: snapshot.map((data) => _buildListItem(context, data)).toList(),
-    );
+    List<Recipe> recipe_list = [];
+//    snapshot.map((data) => recipeList(context, data).toList());
+    for(int i=0;i<snapshot.length;i++){
+      Recipe recipe = Recipe.fromSnapshot(snapshot[i]);
+      recipe_list.add(recipe);
+    }
+    return AsymmetricView(products: recipe_list,);
   }
+
+  List<Recipe> recipeList(BuildContext context, DocumentSnapshot data){
+
+  }
+
+//    return ListView(
+//      padding: const EdgeInsets.only(top: 20.0),
+//      children: snapshot.map((data) => _buildListItem(context, data)).toList(),
+//    );
 
   Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
     final record = Recipe.fromSnapshot(data);
@@ -145,38 +158,6 @@ class Record {
 
   @override
   String toString() => "Record<$name:$votes>";
-}
-
-class Recipe{
-  final String title;
-  final String description;
-  final String image;
-
-  final int likes;
-  final int views;
-  final List<String> comments;
-  final DocumentReference reference;
-
-  Recipe.fromMap(Map<String, dynamic> map, {this.reference})
-      : assert(map['title'] != null),
-        assert(map['description'] != null),
-        assert(map['image'] != null),
-        assert(map['likes'] != null),
-        assert(map['views'] != null),
-        assert(map['comments'] != null),
-        title = map['title'],
-        description = map['description'],
-        image = map['image'],
-        likes = map['likes'],
-        views = map['views'],
-        comments = map['comments'].cast<String>();
-
-  Recipe.fromSnapshot(DocumentSnapshot snapshot)
-      : this.fromMap(snapshot.data, reference: snapshot.reference);
-
-  @override
-  String toString() => "Record<$title:$likes>";
-
 }
 
 //ListTile(

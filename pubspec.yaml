@@ -27,6 +27,7 @@ dependencies:
   firebase_ml_vision: ^0.2.1
   flutter_youtube: ^1.1.6
   cloud_firestore: ^0.8.2
+  intl: ^0.15.6
 
 dev_dependencies:
   flutter_test:
