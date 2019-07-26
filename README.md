@@ -3,6 +3,13 @@
 * Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search?
 * You also get a youtube search integrated inside the app, so you can search for videos instantly and see what to make, and add it to your private repo
 
+### Features
+* Login through firebase
+* Look at Recipes from other people
+* Like, share or comment on them
+* Add your own recipes
+* Use them and make food for friends - Don't be lazy
+
 ---
 ### Firebase + Flutter
 
@@ -47,7 +54,12 @@ Coming soon
     return AsymmetricView(products: recipe_list,);
     ```
 
-### Todo
-1. ~~Load recipes~~
-2. youtube API
-3. Text detection for images
+### Navigation to another screen
+* Navigation is really easy, and if you know OOPS, then you'll master it in seconds
+* You just pass in the object and that's it. Pass it everywhere (literally!)
+
+### Tab Views in Flutter
+* Again, everything including this is easy in Flutter
+* Make a Tab View, fulfill the required parameters and you're all set.
+* Tab Controller, TabBar for the Labels and TabBarView for the actual stuff in each tab
+* You could add any widget in there - Text, ListView etc
