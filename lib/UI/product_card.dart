@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_recipe/model/recipe.dart';
 import 'package:intl/intl.dart';
+import 'package:easy_recipe/recipe_description.dart';
 
 class ProductCard extends StatelessWidget {
   ProductCard({this.imageAspectRatio: 33 / 49, this.recipe})
@@ -17,11 +18,6 @@ class ProductCard extends StatelessWidget {
         decimalDigits: 0, locale: Localizations.localeOf(context).toString());
     final ThemeData theme = Theme.of(context);
 
-//    final imageWidget = Image.asset(
-//      recipe.image,
-//      fit: BoxFit.cover,
-//    );
-
     final imageWidget = Image.network(
       recipe.image,
       fit: BoxFit.cover,
@@ -33,8 +29,10 @@ class ProductCard extends StatelessWidget {
       children: <Widget>[
         InkWell(
           onTap: (){
-            final snackBar = SnackBar(content: Text("Tap"));
-            Scaffold.of(context).showSnackBar(snackBar);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => RecipeDescription(recipe)),
+            );
           },
           child: AspectRatio(
             aspectRatio: imageAspectRatio,
