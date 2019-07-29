@@ -31,6 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    
+    _fcm.subscribeToTopic('recipes');
     _fcm.configure(
       onMessage: (Map<String, dynamic> message) async{
         print("message: $message");
