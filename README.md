@@ -56,7 +56,7 @@ Coming soon
 
 ### Navigation to another screen
 * Navigation is really easy, and if you know OOPS, then you'll master it in seconds
-* You just pass in the object and that's it. Pass it everywhere (literally!)
+* You just need to pass in the object and that's it. Pass it everywhere (literally!)
 
 ### Firebase Functions - Notifications
 * Implemented fully optimized firebase functions and push notifications

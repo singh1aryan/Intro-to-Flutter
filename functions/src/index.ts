@@ -17,7 +17,6 @@ export const sendToTopic = functions.firestore
         };
 
         return fcm.sendToTopic('recipes', payload);
-
     });
 
 
