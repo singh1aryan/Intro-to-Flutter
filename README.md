@@ -12,6 +12,12 @@
 
 ---
 ### Firebase + Flutter
+* Firebase auth - simple login
+* Firebase Firestore - Realtime database
+* Firebase push notifications - Notify the user accordingly
+* Firebase analytics - how your app in performing
+* Firebase ML kit - use tensor flow or built in models for latest features
+
 
 #### Problems
 * There are a lot of errors with the firebase integration, we keep getting weird Dex errors and Google should fix this soon
@@ -26,19 +32,6 @@
 ---
 ### Computer Vision ML Kit
 Coming soon
-
-### Screenshots - From the very beginning
-<div>
-<img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61903008-b723e100-aee0-11e9-8bb1-99e9ece6114a.PNG">
-<img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61902925-8348bb80-aee0-11e9-97f5-c0c78b2b2d54.PNG">
-<img width="200" alt="ss3" src="https://user-images.githubusercontent.com/31454667/61902932-880d6f80-aee0-11e9-8f27-b87dc4d27fdc.PNG">
-<img width="200" alt="ss4" src="https://user-images.githubusercontent.com/31454667/61902938-8c398d00-aee0-11e9-998f-3a0aafb7d655.PNG">
-<img width="200" alt="ss5" src="https://user-images.githubusercontent.com/31454667/61902949-92c80480-aee0-11e9-8656-495c526ce05a.PNG">
-<img width="200" alt="ss6" src="https://user-images.githubusercontent.com/31454667/61902955-978cb880-aee0-11e9-8207-56db2c2e8d01.PNG">
-<img width="200" alt="ss7" src="https://user-images.githubusercontent.com/31454667/61979767-ff5f0400-afb1-11e9-9723-fbc0d4bbda10.PNG">
-<img width="200" alt="ss8" src="https://user-images.githubusercontent.com/31454667/61979770-04bc4e80-afb2-11e9-8ff2-e493902a6707.PNG">
-</div>
-
 
 ### Intgerating Asymmetric view with Firestore
 * Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
@@ -65,7 +58,21 @@ Coming soon
 
 
 ### Tab Views in Flutter
-* Again, everything including this is easy in Flutter
-* Make a Tab View, fulfill the required parameters and you're all set.
+* Again, everything including this is very straightforward in Flutter
+* Make a Tab View, fill in the required parameters and you're all set
 * Tab Controller, TabBar for the Labels and TabBarView for the actual stuff in each tab
 * You could add any widget in there - Text, ListView etc
+
+### Screenshots - From the very beginning
+<div>
+<img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61903008-b723e100-aee0-11e9-8bb1-99e9ece6114a.PNG">
+<img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61902925-8348bb80-aee0-11e9-97f5-c0c78b2b2d54.PNG">
+<img width="200" alt="ss3" src="https://user-images.githubusercontent.com/31454667/61902932-880d6f80-aee0-11e9-8f27-b87dc4d27fdc.PNG">
+<img width="200" alt="ss4" src="https://user-images.githubusercontent.com/31454667/61902938-8c398d00-aee0-11e9-998f-3a0aafb7d655.PNG">
+<img width="200" alt="ss5" src="https://user-images.githubusercontent.com/31454667/61902949-92c80480-aee0-11e9-8656-495c526ce05a.PNG">
+<img width="200" alt="ss6" src="https://user-images.githubusercontent.com/31454667/61902955-978cb880-aee0-11e9-8207-56db2c2e8d01.PNG">
+<img width="200" alt="ss7" src="https://user-images.githubusercontent.com/31454667/61979767-ff5f0400-afb1-11e9-9723-fbc0d4bbda10.PNG">
+<img width="200" alt="ss8" src="https://user-images.githubusercontent.com/31454667/61979770-04bc4e80-afb2-11e9-8ff2-e493902a6707.PNG">
+<img width="200" alt="ss9" src="https://user-images.githubusercontent.com/31454667/62085491-f58b0a00-b218-11e9-8e66-b162ab232571.PNG">
+<img width="200" alt="ss10" src="https://user-images.githubusercontent.com/31454667/62085492-f58b0a00-b218-11e9-8afb-3a48eabebd1a.PNG">
+</div>
