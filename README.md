@@ -58,6 +58,12 @@ Coming soon
 * Navigation is really easy, and if you know OOPS, then you'll master it in seconds
 * You just pass in the object and that's it. Pass it everywhere (literally!)
 
+### Firebase Functions - Notifications
+* Implemented fully optimized firebase functions and push notifications
+* The user is notified in real time when a new item is added to the recipes_list
+* Used Node JS and TypeScript to create a firebase function which does this
+
+
 ### Tab Views in Flutter
 * Again, everything including this is easy in Flutter
 * Make a Tab View, fulfill the required parameters and you're all set.
