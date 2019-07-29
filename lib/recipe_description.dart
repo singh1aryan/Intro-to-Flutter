@@ -159,7 +159,6 @@ class PreparationView extends StatelessWidget {
             new Text(
               item,
               maxLines: 1,
-              style: ,
             ),
           ],
         ),

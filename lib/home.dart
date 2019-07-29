@@ -2,8 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'model/recipe.dart';
 import 'package:easy_recipe/UI/asymmetric_view.dart';
+import 'firebase_notification_handler.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class Home extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,6 +24,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  final Firestore _db = Firestore.instance;
+  final FirebaseMessaging _fcm = FirebaseMessaging();
+
+  @override
+  void initState() {
+    super.initState();
+    _fcm.configure(
+      onMessage: (Map<String, dynamic> message) async{
+        print("message: $message");
+
+        final snackbar = SnackBar(
+          content: Text(message['notification']['title']),
+          action: SnackBarAction(label: 'GO', onPressed: () => null),
+        );
+        Scaffold.of(context).showSnackBar(snackbar);
+
+      },
+      onLaunch: (Map<String, dynamic> message) async{
+        print("message: $message");
+      },
+      onResume: (Map<String, dynamic> message) async{
+        print("message: $message");
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
