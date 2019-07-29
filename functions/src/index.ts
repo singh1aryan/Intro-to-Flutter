@@ -11,8 +11,8 @@ export const sendToTopic = functions.firestore
         // const recipe = snapshot.data();
         const payload : admin.messaging.MessagingPayload = {
             notification: {
-                title: 'new recipe',
-                body: 'new body'
+                title: 'new recipe added, check it out',
+                body: 'Make it and eat it'
             }
         };
 
