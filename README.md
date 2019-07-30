@@ -14,9 +14,9 @@
 ### Firebase + Flutter
 
 #### Problems
-* There are a lot of errors with the firebase integration, we keep getting weird Dex errors and Google should fix this soon
-* There is a lengthy solution for that on github issues, by migrating to AndroidX and then changing some files
-* You have to open the project in android studio, then do stuff, definitely a pain
+* https://github.com/flutter/flutter/issues/27254#issuecomment-461692152
+* https://stackoverflow.com/questions/44653261/android-dependency-has-different-version-for-the-compile-and-runtime
+* https://medium.com/@silsly/the-gradle-failure-may-have-been-because-of-androidx-incompatibilities-in-this-flutter-app-d9376ee7a07b
 
 #### Android vs Flutter - firebase
 * Firebase is definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make
