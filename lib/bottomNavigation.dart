@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'add_new.dart';
 
 class App extends StatelessWidget{
   @override
@@ -21,7 +22,7 @@ class _BottomNavigationState extends State<BottomNavigation>{
   int _currentIndex = 0;
   final List<Widget> _children = [
     Home(),
-    Home(),
+    Add(),
     Home()
   ];
 

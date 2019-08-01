@@ -56,6 +56,10 @@ Coming soon
 * The user is notified in real time when a new item is added to the recipes_list
 * Used Node JS and TypeScript to create a firebase function which does this
 
+### New things I realized
+* setting the state - only stateful widgets
+* have a counter? new items? adding something new with a new id? - use setState(){}
+* How to fetch data from alert dialog? - navigate to the screen back along with the object, instead of navigate.pop()
 
 ### Tab Views in Flutter
 * Again, everything including this is very straightforward in Flutter

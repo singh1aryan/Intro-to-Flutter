@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'model/recipe.dart';
 import 'package:easy_recipe/UI/asymmetric_view.dart';
-import 'firebase_notification_handler.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class Home extends StatelessWidget {
