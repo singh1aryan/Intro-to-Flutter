@@ -12,11 +12,11 @@
 
 ---
 ### Firebase + Flutter
-* Firebase auth - simple login
+* Firebase auth - login with google or Oauth
 * Firebase Firestore - Realtime database
-* Firebase push notifications - Notify the user accordingly
-* Firebase analytics - how your app in performing
-* Firebase ML kit - use tensor flow or built in models for latest features
+* Firebase push notifications - Notify the user when a new recipe is added
+* Firebase analytics - how the app in performing
+* Firebase ML kit - built in ml models for text, face recognition
 
 
 #### Problems
@@ -79,4 +79,5 @@ Coming soon
 <img width="200" alt="ss8" src="https://user-images.githubusercontent.com/31454667/61979770-04bc4e80-afb2-11e9-8ff2-e493902a6707.PNG">
 <img width="200" alt="ss9" src="https://user-images.githubusercontent.com/31454667/62085491-f58b0a00-b218-11e9-8e66-b162ab232571.PNG">
 <img width="200" alt="ss10" src="https://user-images.githubusercontent.com/31454667/62085492-f58b0a00-b218-11e9-8afb-3a48eabebd1a.PNG">
+<img width="200" alt="ss11" src="https://user-images.githubusercontent.com/31454667/62345258-e7eeb200-b4ae-11e9-889c-f3a982191244.PNG">
 </div>
