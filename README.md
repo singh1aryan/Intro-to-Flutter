@@ -1,6 +1,6 @@
 # Easy Recipe
 * Simple Recipe App with a twist
-* Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search?
+* Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search or maybe a score?
 * You also get a youtube search integrated inside the app, so you can search for videos instantly and see what to make, and add it to your private repo
 
 ### Features
@@ -11,6 +11,7 @@
 * Use them and make food for friends - Don't be lazy
 
 ---
+# Flutter 
 ### Firebase + Flutter
 * Firebase auth - login with google or Oauth
 * Firebase Firestore - Realtime database
@@ -18,25 +19,20 @@
 * Firebase analytics - how the app in performing
 * Firebase ML kit - built in ml models for text, face recognition
 
-
-#### Problems
+#### Problems - Flutter issues
 * https://github.com/flutter/flutter/issues/27254#issuecomment-461692152
 * https://stackoverflow.com/questions/44653261/android-dependency-has-different-version-for-the-compile-and-runtime
 * https://medium.com/@silsly/the-gradle-failure-may-have-been-because-of-androidx-incompatibilities-in-this-flutter-app-d9376ee7a07b
 
-#### Android vs Flutter - firebase
+### Android vs Flutter - firebase
 * Firebase is definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make
 * Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it
 * Pushing data is also easier in Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
 
----
-### Computer Vision ML Kit
-Coming soon
-
 ### Intgerating Asymmetric view with Firestore
 * Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
 * It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
-* How I did it? I would suggest you to try it, it'll take probably 10 minutes, but you'll love it
+* Try it first, and then come back to this code!
 *   ```
     List<Recipe> recipe_list = [];
     //    snapshot.map((data) => recipeList(context, data).toList());
@@ -47,19 +43,15 @@ Coming soon
     return AsymmetricView(products: recipe_list,);
     ```
 
-### Navigation to another screen
+### Navigation - Flutter
 * Navigation is really easy, and if you know OOPS, then you'll master it in seconds
-* You just need to pass in the object and that's it. Pass it everywhere (literally!)
+* You just need to pass in the object and that's it. Pass it everywhere (literally!) - for the basics
+* Any data is passed in an Object which can be parsed in the next class
 
 ### Firebase Functions - Notifications
 * Implemented fully optimized firebase functions and push notifications
 * The user is notified in real time when a new item is added to the recipes_list
 * Used Node JS and TypeScript to create a firebase function which does this
-
-### New things I realized
-* setting the state - only stateful widgets
-* have a counter? new items? adding something new with a new id? - use setState(){}
-* How to fetch data from alert dialog? - navigate to the screen back along with the object, instead of navigate.pop()
 
 ### Tab Views in Flutter
 * Again, everything including this is very straightforward in Flutter
@@ -67,6 +59,27 @@ Coming soon
 * Tab Controller, TabBar for the Labels and TabBarView for the actual stuff in each tab
 * You could add any widget in there - Text, ListView etc
 
+### UI - Flutter vs React-Native vs Android
+* Android works with XML layouts, so that's in a separate file and much more readable in a sense
+* Flutter and RN have a one file system, where you define the rules and UI
+* Flutter uses Widgets for literally everything, from TextViews to TabViews - they're called 'Widgets'.
+* RN has components and we have to import them from 'react-native' to use them
+* Styling: Android - Using XML, Flutter - inside widgets - so if you want padding => you wrap the widget in Padding() widget with some padding, RN: you define const style: Stylesheet and add your styles there - similar to the web style where you have css
+* Animations: Android and RN is complicated for Animations, Flutter is very straightforward
+* Clean UI: All three can be used, but for static or single/simple pages - Android works out the fastest
+* What's the best? I would say all 3, so start learning ASAP
+
+### New points for learning - Flutter
+* Setting the state - only stateful widgets
+* Have a counter? new items? adding something new with a new id? - use setState(){}
+* How to fetch data from alert dialog? - navigate to the screen back along with the object, instead of navigate.pop()
+
+---
+### Computer vision ML integration
+* We can integrate a machine learning model to predict the food/recipe posted
+* We can probably look at a dataset of recipes and predict if it's going on the right path
+* Merging the ML code soon!
+---
 ### Screenshots - From the very beginning
 <div>
 <img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61903008-b723e100-aee0-11e9-8bb1-99e9ece6114a.PNG">
