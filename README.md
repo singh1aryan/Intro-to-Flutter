@@ -1,17 +1,21 @@
-# Easy Recipe
-* Simple Recipe App with a twist
-* Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search or maybe a score?
-* You also get a youtube search integrated inside the app, so you can search for videos instantly and see what to make, and add it to your private repo
+# Flutter, APIs, Firebase
 
-### Features
-* Login through firebase
-* Look at Recipes from other people
-* Like, share or comment on them
-* Add your own recipes
-* Use them and make food for friends - Don't be lazy
+## Introduction
+* Cross native platform to build Mobile applications
+### Resources
+* Open source projects
+* Github links
+* Learning Curve
+* Flutter vs React Native
 
----
-# Flutter 
+### Getting Started
+* Make your first app
+* Making different UI and layouts
+* Connecting different databases 
+* Understading async, await
+* Firebase - db, functions, notifications, analytics
+* Advanced UI, animations, APIs
+
 ### Firebase + Flutter
 * Firebase auth - login with google or Oauth
 * Firebase Firestore - Realtime database
@@ -80,6 +84,296 @@
 * We can probably look at a dataset of recipes and predict if it's going on the right path
 * Merging the ML code soon!
 ---
+
+# Different Code snippets -> Beginner - Intermediate - Advanced
+
+## Parsing API - adding info from API to list
+```dart
+for(int i=0;i<body[0]['staggered_tiles'].length;i++){
+    _staggeredTiles.add(new StaggeredTile.count(
+      body[0]['staggered_tiles'][i]['cross_axis'],
+      body[0]['staggered_tiles'][i]['main_axis']
+    ));
+}     
+```
+
+## Making a global class for all graphs/charts
+```dart
+class LabelPieSales {
+  final int year;
+  final int sales;
+
+  LabelPieSales(this.year, this.sales);
+}
+```
+
+## Changing constructors of Graphs/charts generic classes
+```dart
+factory SimpleBarChart.withSampleData(List<LabelPieSales> data) {
+    return new SimpleBarChart(
+      _createSampleData(data),
+      // Disable animations for image tests.
+      animate: false,
+    );
+  }
+```
+
+## Web views for Flutter - Eg: Displaying websites inside your app
+```dart
+launchUrl() {
+    setState(() {
+      urlString = controller.text;
+      flutterWebviewPlugin.reloadUrl(urlString);
+    });
+  }
+```
+## Firebase Function- Eg: push notifications
+```dart
+export const sendToTopic = functions.firestore
+    .document('recipes/{recipyId}')
+    .onCreate(async snapshot => {
+        // const recipe = snapshot.data();
+        const payload : admin.messaging.MessagingPayload = {
+            notification: {
+                title: 'new recipe added, check it out',
+                body: 'Make it and eat it'
+            }
+        };
+
+        return fcm.sendToTopic('recipes', payload);
+    });
+```
+## Parsing 2 APIs in one - Eg: pager view 
+```dart
+if (body[i][0]['type'] == 'donut') {
+        List<LabelPieSales> _d = [];
+        for (int j = 0; j < body[i][0]['data'].length; j++) {
+          _d.add(new LabelPieSales(
+              body[i][0]['data'][j]['year'], body[i][0]['data'][j]['sales']));
+        }
+        _wid_top.add(new Container(
+          height: 200,
+          width: 200,
+          child: DonutChartWidget.withSampleData(_d),
+        ));
+      }
+      else if (body[i][0]['type'] == 'label-pie') {
+        List<LabelPieSales> _d = [];
+        for (int j = 0; j < body[i][0]['data'].length; j++) {
+          _d.add(new LabelPieSales(
+              body[i][0]['data'][j]['year'], body[i][0]['data'][j]['sales']));
+        }
+        _wid_top.add(new Container(
+          height: 200,
+          width: 200,
+          child: SimpleBarChart.withSampleData(_d),
+        ));
+      }
+```
+
+## Basic class layout 
+```dart
+class App extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Home(),
+      theme: ThemeData(primaryColor: PrimaryColor),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class Home extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return new _HomeState();
+  }
+}
+
+class _HomeState extends State<Home>{}
+```
+
+## Notifier - Eg: real time interaction with buttons and API
+```dart
+return Container(
+      padding: const EdgeInsets.all(4.0),
+      child: appState.isFetching
+          ? CircularProgressIndicator()
+          : appState.getResponseJson() != null
+          ? ListView.builder(
+              primary: false,
+              shrinkWrap: true,
+              itemCount: appState.getResponseJson().length,
+              itemBuilder: (context, index) {
+                return Container(
+                  height: 100,
+                  width: 100,
+                  child: graph(appState.getResponseJson()),
+                );
+              },
+            )
+          : Text("Press Button above to fetch data"),
+    );
+```
+
+## State management - Eg: adding new objects in SQL database
+``` dart
+floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () async {
+          Dog dog = new Dog(id: _id, name: "name",age: 22);
+          await insertDog(dog);
+          setState(() {
+            _id += 1;
+          });
+        },
+      ),
+```
+
+## Comparing SQL and API stuff - making a local push notification
+``` dart
+List<Graph> graphs_sql = await graphs();
+            List<String> graphs_sql_types = [];
+            for(int i=0;i<graphs_sql.length;i++){
+              graphs_sql_types.add(graphs_sql[i].type);
+            }
+            if (graphs_sql.length != _types.length) {
+              for (int i = 0; i < _types.length; i++) {
+                if(!graphs_sql_types.contains(_types[i])){ // add only if a new type
+                  await insertGraph(new Graph(id: i, type: _types[i]));
+                }
+              }
+            }
+```
+---
+
+## Initializing SQL database 
+``` dart
+initDB() async {
+  return await openDatabase(
+    join(await getDatabasesPath(), 'graphs_database.db'),
+    onCreate: (db, version) {
+      return db.execute(
+        "CREATE TABLE graphs(id INTEGER PRIMARY KEY, type TEXT)",
+      );
+    },
+    version: 1,
+  );
+}
+```
+
+---
+
+## Fetching code from API - Frontend backend interaction
+```dart
+fetch() async {
+
+    var url = "API-HERE";
+    var res = await http.get(url);
+    var body = jsonDecode(res.body);
+
+    // body is your API body 
+}
+```
+---
+
+## Staggered tiles
+```dart
+Scaffold(
+        body: new Padding(
+            padding: const EdgeInsets.only(top: 12.0),
+            child: StaggeredGridView.count(
+                crossAxisCount: 3,
+                staggeredTiles: _staggeredTiles,
+                children: _tiles,
+                mainAxisSpacing: 4.0,
+                crossAxisSpacing: 4.0,
+                padding: const EdgeInsets.all(4.0),
+              ),
+            )
+    )
+
+```
+---
+
+## A simple Model class
+```dart
+class News{
+  String dateAdded;
+  String title;
+  String body;
+  String level;
+  String category;
+
+  News(this.dateAdded, this.title, this.body, this.level, this.category);
+
+}
+```
+---
+
+## Sort of column inside a scroll view - Eg: Horizontal listviews in a column
+```dart
+return Container(
+      height: _height,
+      width: _width,
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            widget(),
+            widget(),
+            widget(),
+            widget(),
+          ],
+        ),
+      ),
+    )
+```
+---
+## Height and Width of screen
+```dart
+double _height = MediaQuery.of(context).size.height;
+double _width = MediaQuery.of(context).size.width;
+```
+---
+
+## init state - initialize any lists/images for the screen
+```dart
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _image = {url};
+    localList1 = globalList1;
+    localList1 = globalList2;
+    }
+```
+---
+
+## SQL - fetching stuff - can we only fetch in async functions?
+```dart
+fetch() async{
+    final List<Product> productList = await products(); 
+  }
+```
+---
+# Apps made
+## Easy Recipe
+* Simple Recipe App with a twist
+* Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search or maybe a score?
+* You also get a youtube search integrated inside the app, so you can search for videos instantly and see what to make, and add it to your private repo
+### Features
+* Login through firebase
+* Look at Recipes from other people
+* Like, share or comment on them
+* Add your own recipes
+* Use them and make food for friends - Don't be lazy
+
+## Tech News - News API
+
+---
 ### Screenshots - From the very beginning
 <div>
 <img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61903008-b723e100-aee0-11e9-8bb1-99e9ece6114a.PNG">
@@ -93,4 +387,9 @@
 <img width="200" alt="ss9" src="https://user-images.githubusercontent.com/31454667/62085491-f58b0a00-b218-11e9-8e66-b162ab232571.PNG">
 <img width="200" alt="ss10" src="https://user-images.githubusercontent.com/31454667/62085492-f58b0a00-b218-11e9-8afb-3a48eabebd1a.PNG">
 <img width="200" alt="ss11" src="https://user-images.githubusercontent.com/31454667/62345258-e7eeb200-b4ae-11e9-889c-f3a982191244.PNG">
+<img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61551815-6bba9000-aa13-11e9-8d05-5c134eafb1e8.PNG">
+<img width="200" alt="ss3" src="https://user-images.githubusercontent.com/31454667/61551752-4168d280-aa13-11e9-8c4b-97a1997f6e0a.PNG">
+<img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61551761-4af23a80-aa13-11e9-817e-9b6088145777.PNG">
+</div>
+
 </div>
