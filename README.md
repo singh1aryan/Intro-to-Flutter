@@ -16,6 +16,14 @@
 * Firebase - db, functions, notifications, analytics
 * Advanced UI, animations, APIs
 
+### Making the perfect UI
+* Using different UI widgets like Stack, Buttons, Text, Padding, Box, Slider etc
+* Adding animation to UI
+* Using state management to navigate smoothly
+
+### Machine Learning with Flutter
+* Using the ML Kit with Flutter
+
 ### Firebase + Flutter
 * Firebase auth - login with google or Oauth
 * Firebase Firestore - Realtime database
