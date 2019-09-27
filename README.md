@@ -1,25 +1,52 @@
 # Flutter, APIs, Firebase
 
 ## Introduction
-* Cross native platform to build Mobile applications
-### Resources
-* Open source projects
-* Github links
-* Learning Curve
-* Flutter vs React Native
+* What's Flutter - Cross native platform to build Mobile applications
 
-### Getting Started
-* Make your first app
-* Making different UI and layouts
-* Connecting different databases 
-* Understading async, await
-* Firebase - db, functions, notifications, analytics
-* Advanced UI, animations, APIs
+### Fly with Flutter
+* Open source projects - thttps://github.com/tortuvshin/open-source-flutter-apps
+* Github links - https://github.com/iampawan/FlutterExampleApps
+* Reason to start - https://medium.com/flutter-community/13-reasons-why-you-should-choose-consider-to-move-to-flutter-in-2019-24323ee259c1
+* Flutter vs React Native - https://hackernoon.com/react-native-vs-flutter-which-is-preferred-for-you-bba108f808
 
-### Making the perfect UI
-* Using different UI widgets like Stack, Buttons, Text, Padding, Box, Slider etc
-* Adding animation to UI
-* Using state management to navigate smoothly
+### How to start Flutter?
+* Start with reading the Beginner guide - https://flutter.dev/docs/get-started/install
+* Follow https://github.com/iampawan - Flutter Google Developer Expert - Lots of open source for Flutter
+* Google Codelabs - https://codelabs.developers.google.com/codelabs/flutter-firebase/#0 - Amazing Resource
+* Youtube channel - https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+
+
+### Flutter Widgets - Complete UI Guide
+* Guide - https://flutter.dev/docs/development/ui/layout
+* Scaffold
+* Material App
+
+#### Widgets + Children
+* Text
+* Row - children - Expanded
+* Column
+* Center
+* Container - child, decoration
+* Stack
+* Expanded
+* Icon Button
+* Raised Button
+* Image.asset
+* Icon
+
+#### Styling
+* Padding
+
+
+### Async/Await with Flutter
+* Async, await - 5 video series - https://www.youtube.com/watch?v=vl_AaCgudcY
+* Future/Promises - https://medium.com/flutter-community/futures-async-await-threading-in-flutter-baeeab1c1fe3
+* Asynchronous Programming - https://dart.dev/codelabs/async-await
+* Article - https://codingwithjoe.com/dart-fundamentals-async-await/
+* Beginner - https://blog.usejournal.com/flutter-async-beginner-friendly-guide-for-heavy-lifting-operations-cf8ec81833d7
+
+### BloC pattern Flutter
+* Coming soon
 
 ### Machine Learning with Flutter
 * Using the ML Kit with Flutter
@@ -36,24 +63,10 @@
 * https://stackoverflow.com/questions/44653261/android-dependency-has-different-version-for-the-compile-and-runtime
 * https://medium.com/@silsly/the-gradle-failure-may-have-been-because-of-androidx-incompatibilities-in-this-flutter-app-d9376ee7a07b
 
-### Android vs Flutter - firebase
+### Android vs Flutter - Firebase
 * Firebase is definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make
 * Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it
 * Pushing data is also easier in Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
-
-### Intgerating Asymmetric view with Firestore
-* Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
-* It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
-* Try it first, and then come back to this code!
-*   ```
-    List<Recipe> recipe_list = [];
-    //    snapshot.map((data) => recipeList(context, data).toList());
-    for(int i=0;i<snapshot.length;i++){
-      Recipe recipe = Recipe.fromSnapshot(snapshot[i]);
-      recipe_list.add(recipe);
-    }
-    return AsymmetricView(products: recipe_list,);
-    ```
 
 ### Navigation - Flutter
 * Navigation is really easy, and if you know OOPS, then you'll master it in seconds
@@ -115,6 +128,20 @@ class LabelPieSales {
 }
 ```
 
+## Intgerating Asymmetric view with Firestore
+* Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
+* It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
+* Try it first, and then come back to this code!
+*   ```
+    List<Recipe> recipe_list = [];
+    //    snapshot.map((data) => recipeList(context, data).toList());
+    for(int i=0;i<snapshot.length;i++){
+      Recipe recipe = Recipe.fromSnapshot(snapshot[i]);
+      recipe_list.add(recipe);
+    }
+    return AsymmetricView(products: recipe_list,);
+    ```
+                                        
 ## Changing constructors of Graphs/charts generic classes
 ```dart
 factory SimpleBarChart.withSampleData(List<LabelPieSales> data) {
@@ -398,6 +425,4 @@ fetch() async{
 <img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61551815-6bba9000-aa13-11e9-8d05-5c134eafb1e8.PNG">
 <img width="200" alt="ss3" src="https://user-images.githubusercontent.com/31454667/61551752-4168d280-aa13-11e9-8c4b-97a1997f6e0a.PNG">
 <img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61551761-4af23a80-aa13-11e9-817e-9b6088145777.PNG">
-</div>
-
 </div>
