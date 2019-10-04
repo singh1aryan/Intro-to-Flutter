@@ -15,7 +15,7 @@
 * Google Codelabs - https://codelabs.developers.google.com/codelabs/flutter-firebase/#0 - Amazing Resource
 * Youtube channel - https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
 
-
+Everything is a widget in FLutter, whether it's a text view or a button or even a tab view. So let's get started with Flutter widgets
 ### Flutter Widgets - Complete UI Guide
 * Guide - https://flutter.dev/docs/development/ui/layout
 * Scaffold
