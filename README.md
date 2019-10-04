@@ -108,6 +108,22 @@
 
 # Different Code snippets -> Beginner - Intermediate - Advanced
 
+## Using conditionals with Flutter
+```dart
+child: users.length <= 0
+            ? Center(
+                child: EmptyState(
+                  title: 'Oops',
+                  message: 'Add form by tapping add button below',
+                ),
+              )
+            : ListView.builder(
+                addAutomaticKeepAlives: true,
+                itemCount: users.length,
+                itemBuilder: (_, i) => users[i],
+              ),
+      )
+```
 ## Parsing API - adding info from API to list
 ```dart
 for(int i=0;i<body[0]['staggered_tiles'].length;i++){
