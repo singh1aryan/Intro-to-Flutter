@@ -441,7 +441,7 @@ fetch() async{
 <img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61551815-6bba9000-aa13-11e9-8d05-5c134eafb1e8.PNG">
 <img width="200" alt="ss3" src="https://user-images.githubusercontent.com/31454667/61551752-4168d280-aa13-11e9-8c4b-97a1997f6e0a.PNG">
 <img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61551761-4af23a80-aa13-11e9-817e-9b6088145777.PNG">
-<img width="250" alt="Screen Shot 2019-10-03 at 9 44 44 PM" src="https://user-images.githubusercontent.com/31454667/66258430-3a7c7100-e773-11e9-91e1-3a8c38f7d198.png">
-<img width="250" alt="Screen Shot 2019-10-04 at 1 36 06 PM" src="https://user-images.githubusercontent.com/31454667/66258431-3a7c7100-e773-11e9-9273-32556a9eef54.png">
+<img width="200" alt="Screen Shot 2019-10-03 at 9 44 44 PM" src="https://user-images.githubusercontent.com/31454667/66258430-3a7c7100-e773-11e9-91e1-3a8c38f7d198.png">
+<img width="200" alt="Screen Shot 2019-10-04 at 1 36 06 PM" src="https://user-images.githubusercontent.com/31454667/66258431-3a7c7100-e773-11e9-9273-32556a9eef54.png">
 
 </div>
