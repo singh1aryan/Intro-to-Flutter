@@ -64,6 +64,8 @@ Everything is a widget in FLutter, whether it's a text view or a button or even 
 * Transform
 
 #### Important Diagrams
+<img width="550" alt="Screen Shot 2019-10-06 at 10 41 15 PM" src="https://user-images.githubusercontent.com/31454667/66281735-984fac80-e88a-11e9-8563-954c70b8abcd.png">
+<img width="550" alt="Screen Shot 2019-10-06 at 10 41 25 PM" src="https://user-images.githubusercontent.com/31454667/66281736-984fac80-e88a-11e9-9967-aef1ccc770c4.png">
 
 
 ### Async/Await with Flutter
