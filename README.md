@@ -50,7 +50,6 @@ Everything is a widget in FLutter, whether it's a text view or a button or even 
 * SliverAppBar
 * DeMystified
 
-
 #### Styling
 * Padding
 * Align 
@@ -64,13 +63,26 @@ Everything is a widget in FLutter, whether it's a text view or a button or even 
 * Offstage
 * Transform
 
+#### Important Diagrams
+
+
 ### Async/Await with Flutter
 * Async, await - 5 video series - https://www.youtube.com/watch?v=vl_AaCgudcY
 * Future/Promises - https://medium.com/flutter-community/futures-async-await-threading-in-flutter-baeeab1c1fe3
 * Asynchronous Programming - https://dart.dev/codelabs/async-await
 * Article - https://codingwithjoe.com/dart-fundamentals-async-await/
 * Beginner - https://blog.usejournal.com/flutter-async-beginner-friendly-guide-for-heavy-lifting-operations-cf8ec81833d7
+Basic fetch() function: 
+```dart
+fetch() async {
 
+    var url = "API-HERE";
+    var res = await http.get(url);
+    var body = jsonDecode(res.body);
+
+    // body is your API body 
+}
+```
 ### BloC pattern Flutter
 * Coming soon
 
@@ -443,10 +455,12 @@ fetch() async{
 ```
 ---
 # Apps made
+
 ## Easy Recipe
 * Simple Recipe App with a twist
 * Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search or maybe a score?
 * You also get a youtube search integrated inside the app, so you can search for videos instantly and see what to make, and add it to your private repo
+
 ### Features
 * Login through firebase
 * Look at Recipes from other people
