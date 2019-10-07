@@ -17,15 +17,15 @@
 
 Everything is a widget in FLutter, whether it's a text view or a button or even a tab view. So let's get started with Flutter widgets
 
-#### Flutter on Medium
-* https://medium.com/flutter
+#### Resources - Links, Github, Open Source
+* Medium - https://medium.com/flutter
+* Best Open source apps - https://itsallwidgets.com/
+* A Searchable List of Flutter Resources - https://flutterx.com/
 
-### Flutter Widgets - Complete UI Guide
+### Flutter Widgets - A-Z
 * Guide - https://flutter.dev/docs/development/ui/layout
 * Scaffold
 * Material App
-
-<img width="727" alt="Screen Shot 2019-10-06 at 10 22 10 PM" src="https://user-images.githubusercontent.com/31454667/66281109-dbf4e700-e887-11e9-9dc0-7d74d4de886f.png">
 
 #### Multi-child layout widgets
 * Text
@@ -64,6 +64,7 @@ Everything is a widget in FLutter, whether it's a text view or a button or even 
 * Transform
 
 #### Important Diagrams
+<img width="550" alt="Screen Shot 2019-10-06 at 10 22 10 PM" src="https://user-images.githubusercontent.com/31454667/66281109-dbf4e700-e887-11e9-9dc0-7d74d4de886f.png">
 <img width="550" alt="Screen Shot 2019-10-06 at 10 41 15 PM" src="https://user-images.githubusercontent.com/31454667/66281735-984fac80-e88a-11e9-8563-954c70b8abcd.png">
 <img width="550" alt="Screen Shot 2019-10-06 at 10 41 25 PM" src="https://user-images.githubusercontent.com/31454667/66281736-984fac80-e88a-11e9-9967-aef1ccc770c4.png">
 
