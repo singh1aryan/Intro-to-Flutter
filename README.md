@@ -16,27 +16,53 @@
 * Youtube channel - https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
 
 Everything is a widget in FLutter, whether it's a text view or a button or even a tab view. So let's get started with Flutter widgets
+
+#### Flutter on Medium
+* https://medium.com/flutter
+
 ### Flutter Widgets - Complete UI Guide
 * Guide - https://flutter.dev/docs/development/ui/layout
 * Scaffold
 * Material App
 
-#### Widgets + Children
+<img width="727" alt="Screen Shot 2019-10-06 at 10 22 10 PM" src="https://user-images.githubusercontent.com/31454667/66281109-dbf4e700-e887-11e9-9dc0-7d74d4de886f.png">
+
+#### Multi-child layout widgets
 * Text
 * Row - children - Expanded
 * Column
 * Center
 * Container - child, decoration
 * Stack
+* Tab View, Grid View
 * Expanded
 * Icon Button
 * Raised Button
 * Image.asset
-* Icon
+* List View, List Tile
+* Table
+* Wrap
+
+#### Single-child layout widgets
+* Slivers
+* SliverList
+* SliverGrid
+* SliverAppBar
+* DeMystified
+
 
 #### Styling
 * Padding
-
+* Align 
+* Aspect Ratio 
+* Baseline - 
+* Center
+* Constraint Box
+* Container
+* Fitted Box
+* Intrinsic Height, Weight
+* Offstage
+* Transform
 
 ### Async/Await with Flutter
 * Async, await - 5 video series - https://www.youtube.com/watch?v=vl_AaCgudcY
