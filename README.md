@@ -58,6 +58,12 @@ Everything is a widget in FLutter, whether it's a text view or a button or even 
 * Firebase analytics - how the app in performing
 * Firebase ML kit - built in ml models for text, face recognition
 
+### Accessibility Coding with Flutter
+* Exclude Semantics
+* Merge Semantics
+* Voice Overs
+* Color Combination
+
 #### Problems - Flutter issues
 * https://github.com/flutter/flutter/issues/27254#issuecomment-461692152
 * https://stackoverflow.com/questions/44653261/android-dependency-has-different-version-for-the-compile-and-runtime
