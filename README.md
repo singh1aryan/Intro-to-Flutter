@@ -457,21 +457,13 @@ fetch() async{
   }
 ```
 ---
-# Apps made
-
-## Easy Recipe
-* Simple Recipe App with a twist
-* Computer ML detects things in your uploaded picture and gives some info on that, maybe an automatic search or maybe a score?
-* You also get a youtube search integrated inside the app, so you can search for videos instantly and see what to make, and add it to your private repo
-
-### Features
-* Login through firebase
-* Look at Recipes from other people
-* Like, share or comment on them
-* Add your own recipes
-* Use them and make food for friends - Don't be lazy
-
-## Tech News - News API
+## Apps
+### Practice by making Apps
+* API: News, Movies, Restaurants
+* Social Media: Blogs, Recipes
+* Games: Tic-Tac-Toe, Minesweeper, Guessing Cards, 2048, 15
+* Animations: Tinder cards, Sliding, Modals 
+* Simple: Todo, Navigation, Login, Drawers
 
 ---
 ### Screenshots - From the very beginning
