@@ -18,4 +18,15 @@ class Home extends StatefulWidget{
   }
 }
 
-class _HomeState extends State<Home>{}
+class _HomeState extends State<Home>{
+  @override
+  Widget build(){
+    return Scaffold(
+      body: Container(
+        child: Center(
+          child: Text('Hello')
+        )
+      )
+    );
+  }
+}
