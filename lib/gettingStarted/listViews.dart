@@ -14,7 +14,6 @@ class Home extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    // ? we can pass in objects here
     return new _HomeState();
   }
 }
@@ -22,8 +21,25 @@ class Home extends StatefulWidget{
 class _HomeState extends State<Home>{
   @override
   Widget build(){
-    return new Scaffold(
-      
+    return Scaffold(
+      appBar: AppBar(title: Text('ListViews')),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            title: Text('Sun'),
+          ),
+          ListTile(
+            title: Text('Moon'),
+          ),
+          ListTile(
+            title: Text('Star'),
+          ),
+        ],
+      )
     );
+  }
+
+  Widget ListView(){
+    // make a list view for the view
   }
 }
