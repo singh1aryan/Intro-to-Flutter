@@ -7,7 +7,4 @@ class User{
   final String lastName;
   final String userId;
   
-
-  
-
 }
