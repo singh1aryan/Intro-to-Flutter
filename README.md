@@ -467,7 +467,17 @@ fetch() async{
 * Simple: Todo, Navigation, Login, Drawers
 
 ---
-### Open source apps!
+
+### Hackathons
+* Using flutter at your next hackathon
+* Quick API integration and making crazy stuff
+* Using machine learning, networking for small projects
+* Using open source material design for interactive UI
+* Making the App fully functional and usable
+* Screenshots
+
+<!-- ### Screenshots - Apps you can make!
+Some of them are taken from other sources..
 <div>
 <img width="200" alt="ss1" src="https://user-images.githubusercontent.com/31454667/61903008-b723e100-aee0-11e9-8bb1-99e9ece6114a.PNG">
 <img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61902925-8348bb80-aee0-11e9-97f5-c0c78b2b2d54.PNG">
@@ -485,10 +495,5 @@ fetch() async{
 <img width="200" alt="ss2" src="https://user-images.githubusercontent.com/31454667/61551761-4af23a80-aa13-11e9-817e-9b6088145777.PNG">
 <img width="200" alt="Screen Shot 2019-10-03 at 9 44 44 PM" src="https://user-images.githubusercontent.com/31454667/66258430-3a7c7100-e773-11e9-91e1-3a8c38f7d198.png">
 <img width="200" alt="Screen Shot 2019-10-04 at 1 36 06 PM" src="https://user-images.githubusercontent.com/31454667/66258431-3a7c7100-e773-11e9-9273-32556a9eef54.png">
- </div>
- <div>
-<img width="500" alt="Screen Shot 2019-10-15 at 10 10 56 PM" src="https://user-images.githubusercontent.com/31454667/67226543-32733100-f403-11e9-9527-9130499f6585.png">
-<img width="500" alt="Screen Shot 2019-10-15 at 10 11 05 PM" src="https://user-images.githubusercontent.com/31454667/67226544-32733100-f403-11e9-8880-7b190eab8a22.png">
-<img width="500" alt="Screen Shot 2019-10-15 at 10 11 17 PM" src="https://user-images.githubusercontent.com/31454667/67226545-32733100-f403-11e9-99ea-a2ae68095a13.png">
 
-</div>
+</div> -->
