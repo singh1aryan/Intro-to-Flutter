@@ -226,22 +226,7 @@ launchUrl() {
     });
   }
 ```
-## Firebase Function- Eg: push notifications
-```dart
-export const sendToTopic = functions.firestore
-    .document('recipes/{recipyId}')
-    .onCreate(async snapshot => {
-        // const recipe = snapshot.data();
-        const payload : admin.messaging.MessagingPayload = {
-            notification: {
-                title: 'new recipe added, check it out',
-                body: 'Make it and eat it'
-            }
-        };
 
-        return fcm.sendToTopic('recipes', payload);
-    });
-```
 ## Parsing 2 APIs in one - Eg: pager view 
 ```dart
 if (body[i][0]['type'] == 'donut') {
@@ -363,7 +348,13 @@ initDB() async {
   );
 }
 ```
-
+---
+## SQL - fetching stuff - can we only fetch in async functions?
+```dart
+fetch() async{
+    final List<Product> productList = await products(); 
+  }
+```
 ---
 
 ## Fetching code from API - Frontend backend interaction
@@ -398,7 +389,7 @@ Scaffold(
 ```
 ---
 
-## A simple Model class
+## Class Layouts
 ```dart
 class News{
   String dateAdded;
@@ -410,10 +401,28 @@ class News{
   News(this.dateAdded, this.title, this.body, this.level, this.category);
 
 }
+
+class Record {
+  final String name;
+  final int votes;
+  final DocumentReference reference;
+
+  Record.fromMap(Map<String, dynamic> map, {this.reference})
+      : assert(map['name'] != null),
+        assert(map['votes'] != null),
+        name = map['name'],
+        votes = map['votes'];
+
+  Record.fromSnapshot(DocumentSnapshot snapshot)
+      : this.fromMap(snapshot.data, reference: snapshot.reference);
+
+  @override
+  String toString() => "Record<$name:$votes>";
+}
 ```
 ---
 
-## Sort of column inside a scroll view - Eg: Horizontal listviews in a column
+## Column inside a scroll view - Eg: Horizontal listviews in a column
 ```dart
 return Container(
       height: _height,
@@ -450,31 +459,70 @@ double _width = MediaQuery.of(context).size.width;
     }
 ```
 ---
+# Firebase stuff: 
 
-## SQL - fetching stuff - can we only fetch in async functions?
+## Firebase Function- Eg: push notifications
 ```dart
-fetch() async{
-    final List<Product> productList = await products(); 
+export const sendToTopic = functions.firestore
+    .document('recipes/{recipyId}')
+    .onCreate(async snapshot => {
+        // const recipe = snapshot.data();
+        const payload : admin.messaging.MessagingPayload = {
+            notification: {
+                title: 'new recipe added, check it out',
+                body: 'Make it and eat it'
+            }
+        };
+
+        return fcm.sendToTopic('recipes', payload);
+    });
+```
+---
+
+## Firebase Firestore
+```dart
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Recipes for you')),
+      body: _buildBody(context),
+    );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: Firestore.instance.collection('recipes').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return LinearProgressIndicator();
+        return _buildList(context, snapshot.data.documents);
+      },
+    );
   }
 ```
 ---
+
+
 ## Apps
-### Practice by making Apps
+### Practice by making these Apps
 * API: News, Movies, Restaurants
 * Social Media: Blogs, Recipes
 * Games: Tic-Tac-Toe, Minesweeper, Guessing Cards, 2048, 15
-* Animations: Tinder cards, Sliding, Modals 
+* Animations: Tinder cards, Sliding, Modals, Rainfall, Pizza maker, Payment System 
 * Simple: Todo, Navigation, Login, Drawers
-
+* UI: Dashboard, Payment system, Shopping, Recipe design
+* Machine learning: Text to Speech, Computer vision, Chatbots
 ---
 
-### Hackathons
-* Using flutter at your next hackathon
-* Quick API integration and making crazy stuff
-* Using machine learning, networking for small projects
-* Using open source material design for interactive UI
-* Making the App fully functional and usable
-* Screenshots
+## Hackathons
+
+### Why to use Flutter?
+* Quick API integration - fetching, parsing, using
+* Using Networking, web sockets, chatting features
+* Using Open Source material design for interactive UI
+* Take advantage of Open source projects - for UI
+* Firebase quick integration - notification, login, database
+* Machine learning kit powered by Firebase - MLKit
+* Computer vision library by MLKit
 
 <!-- ### Screenshots - Apps you can make!
 Some of them are taken from other sources..
