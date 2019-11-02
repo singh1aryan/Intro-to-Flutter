@@ -1,45 +1,19 @@
-class App extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Home(),
-      theme: ThemeData(primaryColor: PrimaryColor),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+Widget widget() {
+  return Scaffold(
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        text_widget('Something'),
+        SizedBox(height: 20),
+        SizedBox(height: 20),
+        button_widget()
+      ],
+    )
+  );
 }
 
-class Home extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return new _HomeState();
-  }
-}
+// The name of the method is just for the reference
+// This describes how we can use Sized Box
+// It's used to provide spacing after something
 
-class _HomeState extends State<Home>{
-  @override
-  Widget build(){
-    return Scaffold(
-      appBar: AppBar(title: Text('ListViews')),
-      body: ListView(
-        children: <Widget>[
-          ListTile(
-            title: Text('Sun'),
-          ),
-          ListTile(
-            title: Text('Moon'),
-          ),
-          ListTile(
-            title: Text('Star'),
-          ),
-        ],
-      )
-    );
-  }
 
-  Widget ListView(){
-    // make a list view for the view
-  }
-}

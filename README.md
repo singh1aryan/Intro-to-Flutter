@@ -2,6 +2,7 @@
 
 ## Introduction
 * What's Flutter - Cross native platform to build Mobile applications
+* Easy to get started, perfect for hackathons, super fast to code!
 
 ### Fly with Flutter
 * Open source projects - thttps://github.com/tortuvshin/open-source-flutter-apps
@@ -16,7 +17,19 @@
 * Youtube channel - https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
 * https://medium.com/flutterpub/anatomy-of-material-buttons-in-flutter-first-part-40eb790979a6
 
-Everything is a widget in FLutter, whether it's a text view or a button or even a tab view. So let's get started with Flutter widgets
+Everything is a widget in Flutter, whether it's a text view or a button or even a tab view. Keep that in Mind!
+
+<!-- ## Getting started - Mac
+* Download the sdk
+*
+
+## Getting started - Android
+* -->
+
+## Google Codelabs - https://flutter.dev/docs/codelabs
+* The best way to get started is to work with real life applications with some source code in hand
+* You download a starter code and then build from there. Start with an easy project, move your way up and change things as you go
+* Covers everything from Basic layouts to Google maps or advanced UI
 
 #### Resources - Links, Github, Open Source
 * Medium - https://medium.com/flutter
@@ -25,8 +38,7 @@ Everything is a widget in FLutter, whether it's a text view or a button or even 
 
 ### Flutter Widgets - A-Z
 * Guide - https://flutter.dev/docs/development/ui/layout
-* Scaffold
-* Material App
+* lib/Widgets -> An intro guide for all widgets out there
 
 #### Multi-child layout widgets
 * Text
@@ -100,11 +112,13 @@ fetch() async {
 * Firebase analytics - how the app in performing
 * Firebase ML kit - built in ml models for text, face recognition
 
-### Accessibility Coding with Flutter
+### Accessibility Coding - Flutter vs Android
 * Exclude Semantics
 * Merge Semantics
 * Voice Overs
 * Color Combination
+* It's much more defined in Android, but definitely coming up in Flutter
+* For example: We can add things like ``content description`` to a button, textView etc in Android for voice overs
 
 #### Problems - Flutter issues
 * https://github.com/flutter/flutter/issues/27254#issuecomment-461692152
@@ -126,11 +140,14 @@ fetch() async {
 * The user is notified in real time when a new item is added to the recipes_list
 * Used Node JS and TypeScript to create a firebase function which does this
 
-### Tab Views in Flutter
+### Tab Views  - Android vs Flutter
 * Again, everything including this is very straightforward in Flutter
 * Make a Tab View, fill in the required parameters and you're all set
 * Tab Controller, TabBar for the Labels and TabBarView for the actual stuff in each tab
-* You could add any widget in there - Text, ListView etc
+* You could add literally any widget in there - Text, ListView etc
+* It's a bit more complex and well defined in Android
+* We need view pagers, adapters, and fragments to add a tab view
+* We can have different UIs for the fragments, but it's more time consuming to understand and implement
 
 ### UI - Flutter vs React-Native vs Android
 * Android works with XML layouts, so that's in a separate file and much more readable in a sense
@@ -142,11 +159,6 @@ fetch() async {
 * Clean UI: All three can be used, but for static or single/simple pages - Android works out the fastest
 * What's the best? I would say all 3, so start learning ASAP
 
-### New points for learning - Flutter
-* Setting the state - only stateful widgets
-* Have a counter? new items? adding something new with a new id? - use setState(){}
-* How to fetch data from alert dialog? - navigate to the screen back along with the object, instead of navigate.pop()
-
 ---
 ### Computer vision ML integration
 * We can integrate a machine learning model to predict the food/recipe posted
@@ -155,6 +167,39 @@ fetch() async {
 ---
 
 # Different Code snippets -> Beginner - Intermediate - Advanced
+
+## Basic class layout 
+```dart
+class App extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Home(),
+      theme: ThemeData(primaryColor: PrimaryColor),//add-your-color here || or remove this
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class Home extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return new _HomeState();
+  }
+}
+
+class _HomeState extends State<Home>{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column()
+    );
+}
+```
+
+## Simple widgets -> widgets folder in lib
 
 ## Using conditionals with Flutter
 ```dart
@@ -172,68 +217,37 @@ child: users.length <= 0
               ),
       )
 ```
-## Parsing API - adding info from API to list
+
+# APIs - Flutter
+
+## Simple API fetch function
+```dart
+fetch() async {
+
+    var url = "API-HERE";
+    var res = await http.get(url);
+    var body = jsonDecode(res.body);
+
+    // body is your API body 
+}
+```
+## Parsing API - Eg: staggered tile
 ```dart
 for(int i=0;i<body[0]['staggered_tiles'].length;i++){
     _staggeredTiles.add(new StaggeredTile.count(
-      body[0]['staggered_tiles'][i]['cross_axis'],
-      body[0]['staggered_tiles'][i]['main_axis']
+      body[0]['staggered_tiles'][i]['cross_axis'],// body is what we get from the API
+      body[0]['staggered_tiles'][i]['main_axis']// body is what we get from the API
     ));
 }     
+
 ```
-
-## Making a global class for all graphs/charts
-```dart
-class LabelPieSales {
-  final int year;
-  final int sales;
-
-  LabelPieSales(this.year, this.sales);
-}
-```
-
-## Intgerating Asymmetric view with Firestore
-* Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
-* It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
-* Try it first, and then come back to this code!
-*   ```
-    List<Recipe> recipe_list = [];
-    //    snapshot.map((data) => recipeList(context, data).toList());
-    for(int i=0;i<snapshot.length;i++){
-      Recipe recipe = Recipe.fromSnapshot(snapshot[i]);
-      recipe_list.add(recipe);
-    }
-    return AsymmetricView(products: recipe_list,);
-    ```
-                                        
-## Changing constructors of Graphs/charts generic classes
-```dart
-factory SimpleBarChart.withSampleData(List<LabelPieSales> data) {
-    return new SimpleBarChart(
-      _createSampleData(data),
-      // Disable animations for image tests.
-      animate: false,
-    );
-  }
-```
-
-## Web views for Flutter - Eg: Displaying websites inside your app
-```dart
-launchUrl() {
-    setState(() {
-      urlString = controller.text;
-      flutterWebviewPlugin.reloadUrl(urlString);
-    });
-  }
-```
-
 ## Parsing 2 APIs in one - Eg: pager view 
 ```dart
 if (body[i][0]['type'] == 'donut') {
         List<LabelPieSales> _d = [];
         for (int j = 0; j < body[i][0]['data'].length; j++) {
           _d.add(new LabelPieSales(
-              body[i][0]['data'][j]['year'], body[i][0]['data'][j]['sales']));
+              body[i][0]['data'][j]['year'], body[i][0]['data'][j]['sales']));// body is what we get from the API
         }
         _wid_top.add(new Container(
           height: 200,
@@ -245,7 +259,7 @@ if (body[i][0]['type'] == 'donut') {
         List<LabelPieSales> _d = [];
         for (int j = 0; j < body[i][0]['data'].length; j++) {
           _d.add(new LabelPieSales(
-              body[i][0]['data'][j]['year'], body[i][0]['data'][j]['sales']));
+              body[i][0]['data'][j]['year'], body[i][0]['data'][j]['sales']));// body is what we get from the API
         }
         _wid_top.add(new Container(
           height: 200,
@@ -254,33 +268,7 @@ if (body[i][0]['type'] == 'donut') {
         ));
       }
 ```
-
-## Basic class layout 
-```dart
-class App extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Home(),
-      theme: ThemeData(primaryColor: PrimaryColor),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class Home extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return new _HomeState();
-  }
-}
-
-class _HomeState extends State<Home>{}
-```
-
-## Notifier - Eg: real time interaction with buttons and API
+## API with Notifier - Eg: real time interaction with buttons and API
 ```dart
 return Container(
       padding: const EdgeInsets.all(4.0),
@@ -301,6 +289,22 @@ return Container(
             )
           : Text("Press Button above to fetch data"),
     );
+```
+# SQL database + Flutter
+
+## Initializing SQL database 
+``` dart
+initDB() async {
+  return await openDatabase(
+    join(await getDatabasesPath(), 'graphs_database.db'),
+    onCreate: (db, version) {
+      return db.execute(
+        "CREATE TABLE graphs(id INTEGER PRIMARY KEY, type TEXT)",
+      );
+    },
+    version: 1,
+  );
+}
 ```
 
 ## State management - Eg: adding new objects in SQL database
@@ -334,61 +338,16 @@ List<Graph> graphs_sql = await graphs();
 ```
 ---
 
-## Initializing SQL database 
-``` dart
-initDB() async {
-  return await openDatabase(
-    join(await getDatabasesPath(), 'graphs_database.db'),
-    onCreate: (db, version) {
-      return db.execute(
-        "CREATE TABLE graphs(id INTEGER PRIMARY KEY, type TEXT)",
-      );
-    },
-    version: 1,
-  );
-}
-```
----
-## SQL - fetching stuff - can we only fetch in async functions?
+## Web views for Flutter - Eg: Displaying websites inside your app
 ```dart
-fetch() async{
-    final List<Product> productList = await products(); 
+launchUrl() {
+    setState(() {
+      urlString = controller.text;
+      flutterWebviewPlugin.reloadUrl(urlString);
+    });
   }
 ```
 ---
-
-## Fetching code from API - Frontend backend interaction
-```dart
-fetch() async {
-
-    var url = "API-HERE";
-    var res = await http.get(url);
-    var body = jsonDecode(res.body);
-
-    // body is your API body 
-}
-```
----
-
-## Staggered tiles
-```dart
-Scaffold(
-        body: new Padding(
-            padding: const EdgeInsets.only(top: 12.0),
-            child: StaggeredGridView.count(
-                crossAxisCount: 3,
-                staggeredTiles: _staggeredTiles,
-                children: _tiles,
-                mainAxisSpacing: 4.0,
-                crossAxisSpacing: 4.0,
-                padding: const EdgeInsets.all(4.0),
-              ),
-            )
-    )
-
-```
----
-
 ## Class Layouts
 ```dart
 class News{
@@ -420,32 +379,12 @@ class Record {
   String toString() => "Record<$name:$votes>";
 }
 ```
----
 
-## Column inside a scroll view - Eg: Horizontal listviews in a column
-```dart
-return Container(
-      height: _height,
-      width: _width,
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            widget(),
-            widget(),
-            widget(),
-            widget(),
-          ],
-        ),
-      ),
-    )
-```
----
 ## Height and Width of screen
 ```dart
 double _height = MediaQuery.of(context).size.height;
 double _width = MediaQuery.of(context).size.width;
 ```
----
 
 ## init state - initialize any lists/images for the screen
 ```dart
@@ -501,6 +440,19 @@ export const sendToTopic = functions.firestore
 ```
 ---
 
+## Intgerating Asymmetric view with Firestore
+* Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
+* It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
+* Try it first, and then come back to this code!
+*   ```
+    List<Recipe> recipe_list = [];
+    //    snapshot.map((data) => recipeList(context, data).toList());
+    for(int i=0;i<snapshot.length;i++){
+      Recipe recipe = Recipe.fromSnapshot(snapshot[i]);
+      recipe_list.add(recipe);
+    }
+    return AsymmetricView(products: recipe_list,);
+    ```
 
 ## Apps
 ### Practice by making these Apps
@@ -523,6 +475,11 @@ export const sendToTopic = functions.firestore
 * Firebase quick integration - notification, login, database
 * Machine learning kit powered by Firebase - MLKit
 * Computer vision library by MLKit
+
+
+# Important!
+* Feel free to make a pull request if you find something wrong/ can be improved
+* Don't forget to star or fork the repo, I add things every once a while
 
 <!-- ### Screenshots - Apps you can make!
 Some of them are taken from other sources..
