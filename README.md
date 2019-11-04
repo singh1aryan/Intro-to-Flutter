@@ -1,23 +1,42 @@
 # All About Flutter
+* Make amazing Mobile Apps
 
 ## Introduction
 * What's Flutter - Cross native platform to build Mobile applications
 * Easy to get started, perfect for hackathons, super fast to code!
 
-### Fly with Flutter
-* Open source projects - thttps://github.com/tortuvshin/open-source-flutter-apps
-* Github links - https://github.com/iampawan/FlutterExampleApps
+### Things you need to know before coming here - 
+* print() function in any programming language
+
+## Getting started
+* This is just a guide to get you started. Flutter has amazing documentation with every widget explained in detail. Just walk through this repository, clone it, and try to see how the Widgets work. Once you feel comfortable with writing the basics, go on to some sample Apps and dive a little more. The next step after that should be to try new and different things with Flutter including Databases, Firebase, Machine learning, Animations and what not!
+* Do you know to code? language doesn't matter -> You can learn this really fast! You don't have to learn anything before this, just read the documentation and start making Apps
+* It's written in Dart which is very similar to JavaScript
+* Android Jetpack Compose, the latest way of Android app development is really similar to Flutter and I can see Android code being transformed to Flutter in the coming years. -> https://www.youtube.com/watch?v=dtm2h-_sNDQ
+* Android to Flutter -> https://blog.codemagic.io/why-android-developers-should-pay-attention-to-flutter-in-2019/
 * Reason to start - https://medium.com/flutter-community/13-reasons-why-you-should-choose-consider-to-move-to-flutter-in-2019-24323ee259c1
 * Flutter vs React Native - https://hackernoon.com/react-native-vs-flutter-which-is-preferred-for-you-bba108f808
 
-### How to start Flutter?
-* Start with reading the Beginner guide - https://flutter.dev/docs/get-started/install
-* Follow https://github.com/iampawan - Flutter Google Developer Expert - Lots of open source for Flutter
-* Google Codelabs - https://codelabs.developers.google.com/codelabs/flutter-firebase/#0 - Amazing Resource
-* Youtube channel - https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
-* https://medium.com/flutterpub/anatomy-of-material-buttons-in-flutter-first-part-40eb790979a6
+### Open source Flutter Apps
+* Open source projects - thttps://github.com/tortuvshin/open-source-flutter-apps
+* Flutter sample Apps - https://github.com/flutter/samples
+* Example Apps - https://github.com/iampawan/FlutterExampleApps
+* Recipe - https://github.com/bimsina/recipes
+* Dashboard - https://github.com/Ivaskuu/dashboard
+* Cryptocurrency - https://github.com/KarimElghamry/cryptoholic
+* Awesome Flutter - https://github.com/Solido/awesome-flutter
+* Flutter charts - https://github.com/whatsupcoders/flutter-chart-firestore
+* Flutter UI kit - https://github.com/iampawan/Flutter-UI-Kit
+* Charts - https://github.com/imaNNeoFighT/fl_chart
+* Different UI Screens - https://github.com/samarthagarwal/FlutterScreens
+* EGame Book - https://github.com/filiph/egamebook
 
-Everything is a widget in Flutter, whether it's a text view or a button or even a tab view. Keep that in Mind!
+### Awesome GitHub people
+* Flutter - https://github.com/flutter
+* Pawan Kumar - https://github.com/iampawan
+* Filip Hracek - https://github.com/filiph
+* Google Global Dart Hackathon Prague - https://github.com/DartHackPrague
+* Jana Moudrá - https://github.com/Janamou
 
 <!-- ## Getting started - Mac
 * Download the sdk
