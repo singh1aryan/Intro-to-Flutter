@@ -38,6 +38,11 @@
 * Google Global Dart Hackathon Prague - https://github.com/DartHackPrague
 * Jana Moudrá - https://github.com/Janamou
 
+### Other resources
+* Medium - https://medium.com/flutter
+* Best Open source apps - https://itsallwidgets.com/
+* A Searchable List of Flutter Resources - https://flutterx.com/
+
 <!-- ## Getting started - Mac
 * Download the sdk
 *
@@ -50,15 +55,7 @@
 * You download a starter code and then build from there. Start with an easy project, move your way up and change things as you go
 * Covers everything from Basic layouts to Google maps or advanced UI
 
-#### Resources - Links, Github, Open Source
-* Medium - https://medium.com/flutter
-* Best Open source apps - https://itsallwidgets.com/
-* A Searchable List of Flutter Resources - https://flutterx.com/
-
-### Flutter Widgets - A-Z
-* Guide - https://flutter.dev/docs/development/ui/layout
-* lib/Widgets -> An intro guide for all widgets out there
-
+## Everything is a Widget
 #### Multi-child layout widgets
 * Text
 * Row - children - Expanded
