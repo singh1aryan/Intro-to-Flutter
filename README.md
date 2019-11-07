@@ -492,6 +492,8 @@ export const sendToTopic = functions.firestore
 * Machine learning kit powered by Firebase - MLKit
 * Computer vision library by MLKit
 
+## Hackathon Projects made using Flutter
+* Devpost links
 
 # Important!
 * Feel free to make a pull request if you find something wrong/ can be improved
