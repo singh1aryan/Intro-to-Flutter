@@ -17,45 +17,54 @@
 * Reason to start - https://medium.com/flutter-community/13-reasons-why-you-should-choose-consider-to-move-to-flutter-in-2019-24323ee259c1
 * Flutter vs React Native - https://hackernoon.com/react-native-vs-flutter-which-is-preferred-for-you-bba108f808
 
-### Open source Flutter Apps
-* Open source projects - thttps://github.com/tortuvshin/open-source-flutter-apps
-* Flutter sample Apps - https://github.com/flutter/samples
-* Example Apps - https://github.com/iampawan/FlutterExampleApps
-* Recipe - https://github.com/bimsina/recipes
-* Dashboard - https://github.com/Ivaskuu/dashboard
-* Cryptocurrency - https://github.com/KarimElghamry/cryptoholic
-* Awesome Flutter - https://github.com/Solido/awesome-flutter
-* Flutter charts - https://github.com/whatsupcoders/flutter-chart-firestore
-* Flutter UI kit - https://github.com/iampawan/Flutter-UI-Kit
-* Charts - https://github.com/imaNNeoFighT/fl_chart
-* Different UI Screens - https://github.com/samarthagarwal/FlutterScreens
-* EGame Book - https://github.com/filiph/egamebook
+### Flutter vs Other technologies
 
-### Awesome GitHub people
-* Flutter - https://github.com/flutter
-* Pawan Kumar - https://github.com/iampawan
-* Filip Hracek - https://github.com/filiph
-* Google Global Dart Hackathon Prague - https://github.com/DartHackPrague
-* Jana Moudrá - https://github.com/Janamou
+#### Flutter vs Android
+* For people who already know Android:
+* UI - Android needs XML integration whereas everything is a Widget in Flutter and can be made in a single file
+* No more listeners for onclicks, call the methods, change the state and enjoy the view
+* No more findViewById() - just do everything inside the Widget(){} and leave the finding to Android
+* No more gradle issues - add dependencies in the pubspec.yaml file and refresh the application to use the new libraries
+* Assets have to be managed separately in Flutter, you have to declare everything you use - For eg: images, fonts
+* Animations are much much easier and well supported in Flutter - Basic Uses - Eg: Splash activity, Swiping tabs, results, analytics page, navigation
+* Hot reloading in Flutter - just hit 'r' for a reload and 'R' for a restart of the application. Android studio can take upto 20-30 seconds for each reload, and even more if there are gradle issues, which popup every once a while
+* Fetching API - Android APIs can be done with different libraries like Retrofit using GSON whereas fetching in Flutter can be done without any pain. SDKs are definitely much well supported for Android and if you want to use a 3rd party application like ArcGIS - then go for Android 100%, but if you just want to fetch an API, like the news one, do try Flutter
+* Recycler/List view - Recycler View is used in Android to create different lists on a screen. We need an adapter for that which has an interface and we need to know all sorts of different functions to completely implement it. Flutter just has a widget for a ListView where we can define different ListTiles or just add stuff dynamically using 
+* Learning Curve - Working in Flutter is easier once you know dart, which is similar to javascript, and understand the basic concepts about Widgets. Android allows you to make layouts with the help of the designer, which can be used to make constraint layouts. Making basic applications are definitely easier to learn in Android but as we go deeper in fragments and other stuff, it starts to get complicated
+* Fragments vs Components(widgets) - we can simply use the widget component wherever we want unlike the fragments we make in Android, which require some knowledge before hand on how to use Bundle, adapters, xml layouts, and different methods like onCreateView and layoutInflator
+* SQl injections - It's pretty similar in both the technologies. The only difference is that state management can come into place if you're trying to add something consecutively, you would have to store the key in the state and change it using setState(){_key+=1} -> just a use case. The room library in Android is pretty wide used and easy to implement as well
+* Architecture patterns - Everything boils down to MVP/ MVVM/ MVC in Android, whereas we have BloC and Providers in Flutter, which do something similar to MVC, separating out the business logic by creating sinks and streams
+* Code Editor - VSCode/Android studio - Flutter and Android studio for android
+* Getting started guide - Pretty straighforward for Android, download the studio and get started, whereas you have to do a bunch of things for Flutter - can be annoying
+* Firebase - Android vs Flutter
+* Firebase is definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make
+* Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it. There was no way I could've implemented something in Android without a tutorial, but in Flutter, you can always try
+* Pushing data is also easier in Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
 
-### Other resources
-* Medium - https://medium.com/flutter
-* Best Open source apps - https://itsallwidgets.com/
-* A Searchable List of Flutter Resources - https://flutterx.com/
 
-<!-- ## Getting started - Mac
-* Download the sdk
-*
-
-## Getting started - Android
-* -->
+#### Flutter vs React-Native
+* Android works with XML layouts, so that's in a separate file and much more readable in a sense
+* Flutter and RN have a one file system, where you define the rules and UI
+* Flutter uses Widgets for literally everything, from TextViews to TabViews - they're called 'Widgets'.
+* RN has components and we have to import them from 'react-native' to use them
+* Styling: Flutter - inside widgets - so if you want padding => you wrap the widget in Padding() widget with some padding, React Native: you define const style: Stylesheet and add your styles there - similar to the web style where you have css
+* Animations: Flutter is much easier to grasb, whereas react native has a wider aspect to it
+* Clean UI: Flutter and React native both are pretty similar in terms of UI and are simpler than Android, once you start getting it
+* Learning Curve - It's pretty similar in both Flutter and react native.
+* Libraries - npm helps in react native whereas for flutter we just add them to the pubspec.yaml file
+* Code Editor
+* Getting started - Personally, it's been really really hard to work with react native on windows. It's much better if you use a mac, but overall that red screen annoys you a lot. Flutter doesn't have the easiest getting started guide, but there is support out there to help you. 
+* Both can make cross native apps and you can choose Flutter - hackathons/quick projects/learn android as well, and React native - web/ learn react.js/ want to stress yourself :P
 
 ## Google Codelabs - https://flutter.dev/docs/codelabs
 * The best way to get started is to work with real life applications with some source code in hand
 * You download a starter code and then build from there. Start with an easy project, move your way up and change things as you go
 * Covers everything from Basic layouts to Google maps or advanced UI
 
-## Everything is a Widget
+## Everything is a Widget in Flutter
+* Practice, practice, and practice. It'll help you!
+* Widgets Flutter - https://flutter.dev/docs/reference/widgets
+
 #### Multi-child layout widgets
 * Text
 * Row - children - Expanded
@@ -115,8 +124,6 @@ fetch() async {
     // body is your API body 
 }
 ```
-### BloC pattern Flutter
-* Coming soon
 
 ### Machine Learning with Flutter
 * Using the ML Kit with Flutter
@@ -141,11 +148,6 @@ fetch() async {
 * https://stackoverflow.com/questions/44653261/android-dependency-has-different-version-for-the-compile-and-runtime
 * https://medium.com/@silsly/the-gradle-failure-may-have-been-because-of-androidx-incompatibilities-in-this-flutter-app-d9376ee7a07b
 
-### Android vs Flutter - Firebase
-* Firebase is definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make
-* Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it
-* Pushing data is also easier in Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
-
 ### Navigation - Flutter
 * Navigation is really easy, and if you know OOPS, then you'll master it in seconds
 * You just need to pass in the object and that's it. Pass it everywhere (literally!) - for the basics
@@ -156,7 +158,7 @@ fetch() async {
 * The user is notified in real time when a new item is added to the recipes_list
 * Used Node JS and TypeScript to create a firebase function which does this
 
-### Tab Views  - Android vs Flutter
+### Example Widget - Tab Views  - Android vs Flutter
 * Again, everything including this is very straightforward in Flutter
 * Make a Tab View, fill in the required parameters and you're all set
 * Tab Controller, TabBar for the Labels and TabBarView for the actual stuff in each tab
@@ -165,22 +167,42 @@ fetch() async {
 * We need view pagers, adapters, and fragments to add a tab view
 * We can have different UIs for the fragments, but it's more time consuming to understand and implement
 
-### UI - Flutter vs React-Native vs Android
-* Android works with XML layouts, so that's in a separate file and much more readable in a sense
-* Flutter and RN have a one file system, where you define the rules and UI
-* Flutter uses Widgets for literally everything, from TextViews to TabViews - they're called 'Widgets'.
-* RN has components and we have to import them from 'react-native' to use them
-* Styling: Android - Using XML, Flutter - inside widgets - so if you want padding => you wrap the widget in Padding() widget with some padding, RN: you define const style: Stylesheet and add your styles there - similar to the web style where you have css
-* Animations: Android and RN is complicated for Animations, Flutter is very straightforward
-* Clean UI: All three can be used, but for static or single/simple pages - Android works out the fastest
-* What's the best? I would say all 3, so start learning ASAP
-
 ---
 ### Computer vision ML integration
 * We can integrate a machine learning model to predict the food/recipe posted
 * We can probably look at a dataset of recipes and predict if it's going on the right path
 * Merging the ML code soon!
 ---
+
+### BloC pattern
+https://steemit.com/utopian-io/@tensor/advanced-flutter-project---best-practices---generic-bloc-providers---part-three
+
+### Open source Flutter Apps
+* Open source projects - thttps://github.com/tortuvshin/open-source-flutter-apps
+* Flutter sample Apps - https://github.com/flutter/samples
+* Example Apps - https://github.com/iampawan/FlutterExampleApps
+* Recipe - https://github.com/bimsina/recipes
+* Dashboard - https://github.com/Ivaskuu/dashboard
+* Cryptocurrency - https://github.com/KarimElghamry/cryptoholic
+* Awesome Flutter - https://github.com/Solido/awesome-flutter
+* Flutter charts - https://github.com/whatsupcoders/flutter-chart-firestore
+* Flutter UI kit - https://github.com/iampawan/Flutter-UI-Kit
+* Charts - https://github.com/imaNNeoFighT/fl_chart
+* Different UI Screens - https://github.com/samarthagarwal/FlutterScreens
+* EGame Book - https://github.com/filiph/egamebook
+* Catalog - https://github.com/X-Wei/flutter_catalog
+
+### Awesome GitHub people
+* Flutter - https://github.com/flutter
+* Pawan Kumar - https://github.com/iampawan
+* Filip Hracek - https://github.com/filiph
+* Google Global Dart Hackathon Prague - https://github.com/DartHackPrague
+* Jana Moudrá - https://github.com/Janamou
+
+### Other resources
+* Medium - https://medium.com/flutter
+* Best Open source apps - https://itsallwidgets.com/
+* A Searchable List of Flutter Resources - https://flutterx.com/
 
 # Different Code snippets -> Beginner - Intermediate - Advanced
 
@@ -458,8 +480,7 @@ export const sendToTopic = functions.firestore
 
 ## Intgerating Asymmetric view with Firestore
 * Google Codelabs gave me the Asymmetric view, and I wanted to combine it with Firestore
-* It's definitely tricky as you can show data directly from the Firestore to a Listview, but it's a little tricky to store it and send the whole list to another class
-* Try it first, and then come back to this code!
+* It's definitely tricky as you can show data directly from the Firestore to a Listview, but you can store it and send the whole list to another class
 *   ```
     List<Recipe> recipe_list = [];
     //    snapshot.map((data) => recipeList(context, data).toList());
