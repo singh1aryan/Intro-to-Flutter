@@ -1,5 +1,5 @@
 # All About Flutter
-* Make amazing Mobile Apps
+* If you want to know about open source, hackathons, mobile development, personal projects -> this is the right place for you. Documenting Flutter for the community.
 
 ## Introduction
 * What's Flutter - Cross native platform to build Mobile applications
