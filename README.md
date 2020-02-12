@@ -201,6 +201,8 @@ https://steemit.com/utopian-io/@tensor/advanced-flutter-project---best-practices
 
 ### Other resources
 * Medium - https://medium.com/flutter
+* Alligator - https://alligator.io/flutter/
+* Fireship - https://fireship.io/
 * Best Open source apps - https://itsallwidgets.com/
 * A Searchable List of Flutter Resources - https://flutterx.com/
 
@@ -513,8 +515,15 @@ export const sendToTopic = functions.firestore
 * Machine learning kit powered by Firebase - MLKit
 * Computer vision library by MLKit
 
-## Hackathon Projects made using Flutter
-* Devpost links
+## Useful Blog posts 
+* https://medium.com/better-programming/lessons-learned-migrating-a-production-app-to-flutter-78195067b2cb
+* https://fireship.io/courses/flutter-firebase/
+* https://medium.com/flutter-community/working-with-multi-dimensional-list-in-dart-78ff332430a
+* https://alligator.io/flutter/flutter-http/
+* https://alligator.io/flutter/bar-charts/
+* https://medium.com/flutter-community/flutter-context-and-of-method-110409311517
+* https://medium.com/flutter-community/flutter-app-navigation-state-and-menu-pattern-using-bloc-d5a42be941b2
+* 
 
 # Important!
 * Feel free to make a pull request if you find something wrong/ can be improved
