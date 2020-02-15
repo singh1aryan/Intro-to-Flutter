@@ -10,8 +10,19 @@
 
 ## Getting started
 * This is just a guide to get you started. Flutter has amazing documentation with every widget explained in detail. Just walk through this repository, clone it, and try to see how the Widgets work. Once you feel comfortable with writing the basics, go on to some sample Apps and dive a little more. The next step after that should be to try new and different things with Flutter including Databases, Firebase, Machine learning, Animations and what not!
-* Do you know to code? language doesn't matter -> You can learn this really fast! You don't have to learn anything before this, just read the documentation and start making Apps
-* It's written in Dart which is very similar to JavaScript
+* Do you know to code? basic coding skills are required, rest can be learnt. 
+* Flutter - Framework to make cross platform mobile applications. Write code in DART and make apps for both Android and iOS. It's similar to react native or xamarin but much much better. As a student developer, I've had an amazing time using Flutter, faster development, easier API integration, better UIs, complete documentation, and a lot of support online.
+* It's written in DART (programming language) which is very similar to JavaScript. The learning curve is smooth and development process is really really fast. You can learn dart here ->
+    * https://dart.dev/tutorials
+    * https://hackernoon.com/learn-dart-in-a-week-with-these-free-resources-b892e5265220
+    * https://www.tutorialspoint.com/dart_programming/index.htm
+* Next part is to download Flutter and get started with it. There are some steps you have to follow which depend on the kind of machine you use (windows/macOS). Some resources for that ->
+    * Flutter Crash course - https://www.youtube.com/watch?v=EDlywQeg5Vs
+    * Hitesh Choudhary - https://www.youtube.com/watch?v=Xy-qHlaHr6c
+* Write your first app here -> https://flutter.dev/docs/get-started/codelab
+* First app from Scratch -> https://medium.com/aviabird/flutter-tutorial-how-to-build-an-app-from-scratch-b88d4e0e10d7
+
+### Android, Flutter, react native
 * Android Jetpack Compose, the latest way of Android app development is really similar to Flutter and I can see Android code being transformed to Flutter in the coming years. -> https://www.youtube.com/watch?v=dtm2h-_sNDQ
 * Android to Flutter -> https://blog.codemagic.io/why-android-developers-should-pay-attention-to-flutter-in-2019/
 * Reason to start - https://medium.com/flutter-community/13-reasons-why-you-should-choose-consider-to-move-to-flutter-in-2019-24323ee259c1
@@ -21,14 +32,17 @@
 
 #### Flutter vs Android
 * For people who already know Android:
-* UI - Android needs XML integration whereas everything is a Widget in Flutter and can be made in a single file
-* No more listeners for onclicks, call the methods, change the state and enjoy the view
-* No more findViewById() - just do everything inside the Widget(){} and leave the finding to Android
-* No more gradle issues - add dependencies in the pubspec.yaml file and refresh the application to use the new libraries
-* Assets have to be managed separately in Flutter, you have to declare everything you use - For eg: images, fonts
-* Animations are much much easier and well supported in Flutter - Basic Uses - Eg: Splash activity, Swiping tabs, results, analytics page, navigation
-* Hot reloading in Flutter - just hit 'r' for a reload and 'R' for a restart of the application. Android studio can take upto 20-30 seconds for each reload, and even more if there are gradle issues, which popup every once a while
-* Fetching API - Android APIs can be done with different libraries like Retrofit using GSON whereas fetching in Flutter can be done without any pain. SDKs are definitely much well supported for Android and if you want to use a 3rd party application like ArcGIS - then go for Android 100%, but if you just want to fetch an API, like the news one, do try Flutter
+* **UI** - Android needs XML integration whereas everything is a Widget in Flutter and can be made in a single file
+
+* **Listeners** No more listeners for onclicks, call the methods, change the state and enjoy the view
+
+* **findView** - No more findViewById() - just do everything inside the Widget(){} and leave the finding to Android
+
+* **Gradle** - No more gradle issues - add dependencies in the pubspec.yaml file and refresh the application to use the new libraries
+* **Assets** - Have to be managed separately in Flutter, you have to declare everything you use - For eg: images, fonts. In android, you can simply add it in the file section and use them.
+* **Animations** are much much easier and well supported in Flutter - Basic Uses - Eg: Splash activity, Swiping tabs, results, analytics page, navigation
+* **Running the app** - Hot reloading in Flutter - just hit 'r' for a reload and 'R' for a restart of the application. Android studio can take upto 20-30 seconds for each reload, and even more if there are gradle issues, which popup every once a while
+* **API** - Android APIs can be done with different libraries like Retrofit using GSON whereas fetching in Flutter can be done without any pain. The common Fetch function can be used in Flutter and have async await methods to call the APIs.
 * Recycler/List view - Recycler View is used in Android to create different lists on a screen. We need an adapter for that which has an interface and we need to know all sorts of different functions to completely implement it. Flutter just has a widget for a ListView where we can define different ListTiles or just add stuff dynamically using 
 * Learning Curve - Working in Flutter is easier once you know dart, which is similar to javascript, and understand the basic concepts about Widgets. Android allows you to make layouts with the help of the designer, which can be used to make constraint layouts. Making basic applications are definitely easier to learn in Android but as we go deeper in fragments and other stuff, it starts to get complicated
 * Fragments vs Components(widgets) - we can simply use the widget component wherever we want unlike the fragments we make in Android, which require some knowledge before hand on how to use Bundle, adapters, xml layouts, and different methods like onCreateView and layoutInflator
@@ -503,6 +517,10 @@ export const sendToTopic = functions.firestore
 * UI: Dashboard, Payment system, Shopping, Recipe design
 * Machine learning: Text to Speech, Computer vision, Chatbots
 ---
+
+## NATIVE DEVELOPMENT
+* So if you're coding in react native or flutter and want to use a 3rd party library such as arcgis-maps for the Map component in your app, you would have to make a bridge between the UI and the native side of the development - which means that the specific API or library would've to be coded separately in ios and android with the specific documentation for each.
+* More coming on this.
 
 ## Hackathons
 
