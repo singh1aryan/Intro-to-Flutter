@@ -39,21 +39,42 @@
 * **findView** - No more findViewById() - just do everything inside the Widget(){} and leave the finding to Android
 
 * **Gradle** - No more gradle issues - add dependencies in the pubspec.yaml file and refresh the application to use the new libraries
+
 * **Assets** - Have to be managed separately in Flutter, you have to declare everything you use - For eg: images, fonts. In android, you can simply add it in the file section and use them.
+
 * **Animations** are much much easier and well supported in Flutter - Basic Uses - Eg: Splash activity, Swiping tabs, results, analytics page, navigation
+
 * **Running the app** - Hot reloading in Flutter - just hit 'r' for a reload and 'R' for a restart of the application. Android studio can take upto 20-30 seconds for each reload, and even more if there are gradle issues, which popup every once a while
+
 * **API** - Android APIs can be done with different libraries like Retrofit using GSON whereas fetching in Flutter can be done without any pain. The common Fetch function can be used in Flutter and have async await methods to call the APIs.
-* Recycler/List view - Recycler View is used in Android to create different lists on a screen. We need an adapter for that which has an interface and we need to know all sorts of different functions to completely implement it. Flutter just has a widget for a ListView where we can define different ListTiles or just add stuff dynamically using 
-* Learning Curve - Working in Flutter is easier once you know dart, which is similar to javascript, and understand the basic concepts about Widgets. Android allows you to make layouts with the help of the designer, which can be used to make constraint layouts. Making basic applications are definitely easier to learn in Android but as we go deeper in fragments and other stuff, it starts to get complicated
-* Fragments vs Components(widgets) - we can simply use the widget component wherever we want unlike the fragments we make in Android, which require some knowledge before hand on how to use Bundle, adapters, xml layouts, and different methods like onCreateView and layoutInflator
-* SQl injections - It's pretty similar in both the technologies. The only difference is that state management can come into place if you're trying to add something consecutively, you would have to store the key in the state and change it using setState(){_key+=1} -> just a use case. The room library in Android is pretty wide used and easy to implement as well
-* Architecture patterns - Everything boils down to MVP/ MVVM/ MVC in Android, whereas we have BloC and Providers in Flutter, which do something similar to MVC, separating out the business logic by creating sinks and streams
-* Code Editor - VSCode/Android studio - Flutter and Android studio for android
-* Getting started guide - Pretty straighforward for Android, download the studio and get started, whereas you have to do a bunch of things for Flutter - can be annoying
-* Firebase - Android vs Flutter
-* Firebase is definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make
-* Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it. There was no way I could've implemented something in Android without a tutorial, but in Flutter, you can always try
-* Pushing data is also easier in Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
+
+* **Recycler/List view** - Recycler View is used in Android to create different lists on a screen. We need an adapter for that which has an interface and we need to know all sorts of different functions to completely implement it. Flutter just has a widget for a ListView where we can define different ListTiles or just add stuff dynamically using 
+
+* **Learning Curve** - Working in Flutter is easier once you know dart, which is similar to javascript, and understand the basic concepts about Widgets. Android allows you to make layouts with the help of the designer, which can be used to make constraint layouts. Making basic applications are definitely easier to learn in Android but as we go deeper in fragments and other stuff, it starts to get complicated
+
+* **Fragments vs Components(widgets)** - we can simply use the widget component wherever we want unlike the fragments we make in Android, which require some knowledge before hand on how to use Bundle, adapters, xml layouts, and different methods like onCreateView and layoutInflator
+
+* **SQl database** - It's pretty similar in both the technologies. The only difference is that state management can come into place if you're trying to add something consecutively, you would have to store the key in the state and change it using setState(){_key+=1} -> just a use case. The room library in Android is pretty wide used and easy to implement as well
+
+* **Architecture patterns** - Everything boils down to MVP/ MVVM/ MVC in Android, whereas we have BloC and Providers in Flutter, which do something similar to MVC, separating out the business logic by creating sinks and streams
+
+* **Code Editor** - VSCode/Android studio - Flutter and Android studio for android
+
+* **Getting started guide** - Pretty straighforward for Android, download the studio and get started, whereas you have to do a bunch of things for Flutter - can be annoying
+
+**Firebase**
+* Resources for Flutter Firebase:-
+* https://firebase.google.com/docs/flutter/setup
+* https://flutter.dev/docs/development/data-and-backend/firebase
+* https://www.youtube.com/watch?v=8M-Fa239Hy4
+* https://www.youtube.com/channel/UCFTM1FGjZSkoSPDZgtbp7hA/search?query=firebase
+* https://codelabs.developers.google.com/codelabs/flutter-firebase/#0
+
+* **Firebase connection** - Definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make. The basics are the same, you need the .json files and have to add it to the firebase console. Coding in Flutter helps you understand it in a much better way. Overall it's similar.
+
+* **Lists + Firebase** - Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it. There was no way I could've implemented something in Android without a tutorial, but in Flutter, you can always try
+
+* **Data** - Pushing data is also easier in Flutter Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
 
 
 #### Flutter vs React-Native
