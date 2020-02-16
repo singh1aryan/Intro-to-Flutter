@@ -48,7 +48,7 @@
 
 * **API** - Android APIs can be done with different libraries like Retrofit using GSON whereas fetching in Flutter can be done without any pain. The common Fetch function can be used in Flutter and have async await methods to call the APIs.
 
-* **Recycler/List view** - Recycler View is used in Android to create different lists on a screen. We need an adapter for that which has an interface and we need to know all sorts of different functions to completely implement it. Flutter just has a widget for a ListView where we can define different ListTiles or just add stuff dynamically using 
+* **Recycler/List view** - Recycler View is used in Android to create different lists on a screen. We need an adapter for that which has an interface and we need to know all sorts of different functions to completely implement it. Flutter just has a widget for a ListView where we can define different ListTiles or just add stuff dynamically. Much easier, looks simpler.
 
 * **Learning Curve** - Working in Flutter is easier once you know dart, which is similar to javascript, and understand the basic concepts about Widgets. Android allows you to make layouts with the help of the designer, which can be used to make constraint layouts. Making basic applications are definitely easier to learn in Android but as we go deeper in fragments and other stuff, it starts to get complicated
 
@@ -62,34 +62,49 @@
 
 * **Getting started guide** - Pretty straighforward for Android, download the studio and get started, whereas you have to do a bunch of things for Flutter - can be annoying
 
-**Firebase**
-* Resources for Flutter Firebase:-
-* https://firebase.google.com/docs/flutter/setup
-* https://flutter.dev/docs/development/data-and-backend/firebase
-* https://www.youtube.com/watch?v=8M-Fa239Hy4
-* https://www.youtube.com/channel/UCFTM1FGjZSkoSPDZgtbp7hA/search?query=firebase
-* https://codelabs.developers.google.com/codelabs/flutter-firebase/#0
+**Firebase - Resources for Flutter Firebase:** -
+   * https://firebase.google.com/docs/flutter/setup
+   * https://flutter.dev/docs/development/data-and-backend/firebase
+   * https://www.youtube.com/watch?v=8M-Fa239Hy4
+   * https://www.youtube.com/channel/UCFTM1FGjZSkoSPDZgtbp7hA/search?query=firebase
+   * https://codelabs.developers.google.com/codelabs/flutter-firebase/#0
 
 * **Firebase connection** - Definitely easier to implement for Flutter, you can do it in 20 lines of code depending on the list view you make. The basics are the same, you need the .json files and have to add it to the firebase console. Coding in Flutter helps you understand it in a much better way. Overall it's similar.
 
 * **Lists + Firebase** - Android has crazy recycler views which make everything so hard, and integrating firebase + recycler view has about 200 articles, and you just cannot master it. There was no way I could've implemented something in Android without a tutorial, but in Flutter, you can always try
 
-* **Data** - Pushing data is also easier in Flutter Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
+* **Fetching, Pushing Data** - Pushing data is also easier in Flutter Firebase, there's literally an onTap() method which allows you to send a snapshot of the data
 
+* **Machine Learning** - Integrating machine learning 
+   * https://www.youtube.com/watch?v=vT6gNFE0GBw
+   * https://www.youtube.com/watch?v=ymyYUCrJnxU
+   * http://flutterdevs.com/blog/machine-learning-in-flutter/
+   * https://medium.com/flutterdevs/firebase-ml-kit-in-flutter-part-1-680821924161
+   * https://medium.com/flutter-community/flutter-mlkit-8039ec66b6a
 
 #### Flutter vs React-Native
-* Android works with XML layouts, so that's in a separate file and much more readable in a sense
-* Flutter and RN have a one file system, where you define the rules and UI
-* Flutter uses Widgets for literally everything, from TextViews to TabViews - they're called 'Widgets'.
-* RN has components and we have to import them from 'react-native' to use them
-* Styling: Flutter - inside widgets - so if you want padding => you wrap the widget in Padding() widget with some padding, React Native: you define const style: Stylesheet and add your styles there - similar to the web style where you have css
-* Animations: Flutter is much easier to grasb, whereas react native has a wider aspect to it
-* Clean UI: Flutter and React native both are pretty similar in terms of UI and are simpler than Android, once you start getting it
-* Learning Curve - It's pretty similar in both Flutter and react native.
-* Libraries - npm helps in react native whereas for flutter we just add them to the pubspec.yaml file
-* Code Editor
-* Getting started - Personally, it's been really really hard to work with react native on windows. It's much better if you use a mac, but overall that red screen annoys you a lot. Flutter doesn't have the easiest getting started guide, but there is support out there to help you. 
-* Both can make cross native apps and you can choose Flutter - hackathons/quick projects/learn android as well, and React native - web/ learn react.js/ want to stress yourself :P
+
+* **UI** - Flutter and RN have a one file system, where you define the rules and UI. I personally like the interface for Flutter apps as it's much more defined. It's also maintained by Google which owns Android and can have a much better integration with Google.
+
+* **Classes** - Flutter uses Widgets for literally everything, from TextViews to TabViews - they're called 'Widgets'. Flutter uses dart, whereas React native uses Typescript or javascript.
+
+* **Components** - RN has components and we have to import them from 'react-native' to use them. Flutter has widgets which can be used in a similar space. Both of them are similar except the styling and the rendering part.
+
+* **Styling** Flutter - inside widgets - so if you want padding => you wrap the widget in Padding() widget with some padding, React Native: you define const style: Stylesheet and add your styles there - similar to the web style where you have css. So react native has css styling whereas Flutter has the 'widget' styling
+
+* **Animations** - Flutter is much easier to grasb, whereas react native has a wider aspect to it
+
+* **Learning Curve** - Similar in React native and Flutter. 
+
+* **Libraries** - npm helps in react native whereas for flutter we just add them to the pubspec.yaml file
+
+* **APIs** - Both of them have a clear vision on using APIs. A good article for RN - https://medium.com/better-programming/handling-api-like-a-boss-in-react-native-364abd92dc3d
+
+* **Code Editor** - VS code is popular for both
+
+* **Getting started** - Personally, it's been really really hard to work with react native on windows. It's much better if you use a mac, but overall that red screen annoys you a lot. Flutter doesn't have the easiest getting started guide, but there is support out there to help you. 
+
+* **Overall** - Both can make cross native apps and I'll choose Flutter anyday - hackathons/quick projects/learn android as well, and React native - web/ learn react.js/  -> if you want to stress yourself :P
 
 ## Google Codelabs - https://flutter.dev/docs/codelabs
 * The best way to get started is to work with real life applications with some source code in hand
